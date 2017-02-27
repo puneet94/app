@@ -1,0 +1,33 @@
+<div ng-controller="LoginController as login">
+        <form name="loginForm" class="loginForm" novalidate="novalidate">
+                <div layout="column">
+                        <div class="authenticateFormContainer">
+                                <div class="authenticateFormEntity">
+                                        <div class="autheticateFormInputContainer">
+                                                <div class="iconContainer">
+                                                        <span>
+               				<i class="fa fa-envelope-o" aria-hidden="true"></i>
+            					</span>
+                                                </div>
+                                                <input type="email" placeholder="Email" ng-model="login.user.email" type="email" name="email" ng-required="true" />
+                                        </div>
+                                </div>
+                                <div class="authenticateFormEntity">
+                                        <div class="autheticateFormInputContainer">
+                                        	<div class="iconContainer">
+                                                        <span>
+               			<i class="fa fa-lock" aria-hidden="true"></i>
+            					</span>
+                                                </div>
+                                        	
+                                                <input type="password" placeholder="Password" ng-model="login.user.password" name="password" ng-required="true" />
+                                        </div>
+                                </div>
+                                <section>
+                                        <md-button style=" width:100%;margin:0;" ng-click="login.submitLogin()" type="submit" class="md-raised md-primary" ng-disabled="loginForm.$invalid">Login</md-button>
+                                </section>
+                                <h3>{{login.message}}</h3>
+                        </div>
+                </div>
+        </form>
+</div>

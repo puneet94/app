@@ -1,0 +1,18 @@
+<div class="filterDirectiveTemplate">
+        <h3 class="filterHeader">Filter</h3>
+        <div class="filterNameContainer" layout="row" layout-align="space-between end">
+                <h5 class="filterNameHeader">{{filterName}}</h5>
+                <button type="button" class="clearFilterButton" name="button" ng-disabled="!radioModel[filterName.toLowerCase()]" remove-class="highlightClass" ng-click="clearClick()">Clear</button>
+        </div>
+        <div class="filterDirectiveRadioGroup">
+                <div ng-repeat="item in radioRepeat | limitTo:filterLimit" class="filterRadioItem filterRadioContainer">
+                        <label class="filterLabel" for="{{item}}">
+                                <input class="filterRadio" type="radio" id="{{item}}" ng-model="radioModel[filterName]" ng-change="radioChange()" value="{{item}}" /><span class="radioText">{{item}}</span>
+                        </label>
+                </div>
+                <div class="filterLoadMore" ng-click="loadMoreFilters()" ng-hide="filterLimit >= radioRepeat.length">
+                	Load More
+                </div>
+        </div>
+
+</div>

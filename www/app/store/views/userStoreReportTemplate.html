@@ -1,0 +1,36 @@
+<md-dialog aria-label="Report Your Issue">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Report Your Issue</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="usr.reportDialogCancel()">
+          X
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+    <inner-loading-directive inner-loading="usr.innerLoading" container-height="200px"></inner-loading-directive>
+      <div class="md-dialog-content" ng-show="usr.showReportForm">
+        <h4>Report your Issue</h4>
+        <div>
+          <textarea rows="6" style="width:600px;max-width:100%" ng-model="usr.report.description">
+          
+        </textarea>  
+        </div>
+        <md-button class="md-raised md-primary" type="submit" ng-disabled="!usr.report.description" ng-click="usr.submitUserReport()">Submit</md-button>
+      </div>
+      <h1 style="padding:10px;" ng-show="!usr.showReportForm">Your Issue has been saved successfully. Thank you</h1>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      
+      <span flex></span>
+      
+      <md-button ng-click="usr.hideReportDialog()">
+        Close
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

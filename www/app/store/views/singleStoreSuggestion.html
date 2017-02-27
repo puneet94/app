@@ -1,0 +1,19 @@
+<div>
+    <div class="suggestedStoreImage">
+        <!--<div afkl-lazy-image="{{suggestedStore.bannerImage}}" afkl-lazy-image-options="{'offset': 20}"></div>-->
+        <div>
+            <img ng-src="{{suggestedStore.bannerImage}}">
+        </div>
+    </div>
+    <div class="suggestedStoreInfo">
+        <a ui-sref="tabs.singleStorePage({storeId:suggestedStore._id})" ui-sref-opts="{reload: true}">
+            <h5 class="suggestedStoreName">{{suggestedStore.name}}</h5>
+        </a>
+        <p class="suggestedStoreAddress">
+        	{{suggestedStore.address.area+" "}}
+        </p>
+        <p class="suggestedStoreCategories">
+            {{suggestedStore.category.join(" | ")}}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="layout-column flex">
+        <div layout="row">
+                <div style="background: #FFF;" md-whiteframe="2">
+                        <form name="offerForm">
+                                <div class="offerIntroSection">
+                                        <h3 class="formSectionHeaders">Offer Details</h3>
+                                        <div layout="row" layout-align="space-around" layout-wrap layout-margin>
+                                                <div class="formEntity" flex="100" flex-sm="100" flex-xs="100">
+                                                        <label class="formEntityLabel" for="offerName">Name</label>
+                                                        <textarea class="formEntityInput" ng-model="csc.offerForm.tagline" type="text" name="offerTagline" required="required" >
+                                                        </textarea>
+                                                        <div ng-messages="" style="">
+                                                                <div ng-message="required" class="" style="">This field is required</div>
+                                                        </div>
+                                                </div>
+                                                <div class="formEntity" flex="100" flex-sm="100" flex-xs="100">
+                                                        <label class="formEntityLabel" for="offerPhone">Description</label>
+                                                        <textarea class="formEntityInput" type="tel" ng-model="csc.offerForm.description" name="offerDescription">
+                                                            
+                                                        </textarea>
+                                                </div>
+                                                <div class="formEntity" flex="100" flex-sm="100" flex-xs="100">
+                                                        <label class="formEntityLabel" for="offerStartDate">Start Date</label>
+                                                        <input class="formEntityInput" type="date" ng-model="csc.offerForm.startDate" name="offerStartDate"  required="required"/>
+                                                            
+                                                        <div ng-messages="" style="">
+                                                                <div ng-message="required" class="" style="">This field is required</div>
+                                                        </div>
+                                                </div>
+                                                <div class="formEntity" flex="100" flex-sm="100" flex-xs="100">
+                                                        <label class="formEntityLabel" for="offerName">End Date</label>
+                                                        <input class="formEntityInput" ng-model="csc.offerForm.endDate" type="date" name="offerEndDate" required="required" />
+                                                        
+                                                        <div ng-messages="" style="">
+                                                                <div ng-message="required" class="" style="">This field is required</div>
+                                                        </div>
+                                                </div>
+                                                
+                                                <div class="formEntity" flex="45" flex-sm="100" flex-xs="100">
+                                                        <md-button class="md-raised md-primary" type="file" ngf-select="csc.uploadSingleImage($file, $invalidFiles)" accept="image/*" ngf-max-height="5000" ngf-max-size="10MB">
+                                                                Upload banner Image
+                                                        </md-button>
+                                                        <inner-loading-directive inner-loading="csc.formBannerLoading" container-height="100px"></inner-loading-directive>
+                                                        <div style="width:90px;height:90px;" ng-if="csc.offerForm.bannerImage || csc.uploadedImage">
+                                                                <img ng-src="{{csc.offerForm.bannerImage || csc.uploadedImage}}" style="width:100%;height:100%;">
+                                                        </div>
+                                                </div>
+                                                <div flex="45" flex-sm="100" flex-xs="100" class="formEntity">
+                                                        <div>
+                                                                <md-button class="md-raised md-primary" ngf-select="csc.uploadMultipleImages($files)" multiple accept="image/*">Upload Images</md-button>
+                                                                {{csc.errorMsg}}
+                                                        </div>
+                                                        <inner-loading-directive inner-loading="csc.formImgListLoading" container-height="100px"></inner-loading-directive>
+                                                        <div layout="row" class="offerImagesCollection">
+                                                                <images-list-directive images-list="csc.offerForm.offerImages"></images-list-directive>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="offerInfoSection">
+                                        <h3 class="formSectionHeaders">Information</h3>
+                                        <div class="offerInformationForm">
+                                                <div layout="row" layout-align="space-around" layout-wrap layout-margin>
+                                                        <div class="formEntity" flex="45" flex-sm="100" flex-xs="100">
+                                                                <label class="formEntityLabel" for="offerCategory">Category<small>(Press enter to separate multiples)</small></label>
+                                                                <div>
+                                                                        <md-chips class="chipLook" ng-model="csc.offerForm.category" name="offerCategory" readonly="false" md-removable="true" md-max-chips="15">
+                                                                                <md-chip-template>
+                                                                                        <strong>{{$chip}}</strong>
+                                                                                </md-chip-template>
+                                                                        </md-chips>
+                                                                </div>
+                                                                <div class="errors" ng-messages="offerForm.offerCategory.$error">
+                                                                        <div ng-message="md-max-chips">The maxmium of chips is reached.</div>
+                                                                </div>
+                                                        </div>
+                                                        
+                                                </div>
+                                        </div>
+                                </div>
+                                <md-button ng-click="csc.createOffer()" class="md-raised md-primary md-button" type="submit">Submit</md-button>
+                        </form>
+                </div>
+        </div>
+</div>

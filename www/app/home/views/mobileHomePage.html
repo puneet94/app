@@ -1,0 +1,48 @@
+<ion-view  >
+        <ion-content>
+                <div ng-controller="MobileHomePageController as mhpc">
+                        <div layout="row">
+                                <div class="search-banner" image-replacement-directive='https://www.ultimatedesignertoolkit.com/wp-content/uploads/2015/11/Background_5.jpg'>
+                                        <div>
+                                                <div class="search-content">
+                                                        <div class="content-header md-title">
+                                                                <h3>Search for stores, products and brand</h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div layout="row" class="searchBoxLayout">
+                                                <div >
+                                                        <div>
+                                                                <div class="mobileSearchBox" ng-click="mhpc.openEntitySearchPage()" md-whiteframe="3">
+                                                                        <span class="mobileSearchText"> Select a store, product or brands</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div>
+                                <div class="categoryBoxListContainer">
+                                        <div ng-controller="CategoryBoxListController as cblc">
+                                                <div class="categoryBoxList">
+                                                        <div ng-repeat="categoryBox in cblc.categoryBoxList">
+                                                                <div class="storeSuggestionsContainer">
+                                                                        <h3 class="storeSuggestionHeader">{{categoryBox.category}} Stores</h3>
+                                                                        <div class="row" style="flex-wrap: wrap;">
+                                                                                <div class="col col-33 singleStoreSuggestion" ng-repeat="suggestedStore in categoryBox.storesList">
+                                                                                        <single-store-suggestion suggested-store="suggestedStore">
+                                                                                        </single-store-suggestion>
+                                                                                </div>
+                                                                        </div>
+                                                                        <div class="categoryBoxViewMore">
+                                                                                <a ng-href="#/store/storesCollection/category/{{categoryBox.category}}/{{cblc.currentCity}}">View More</a>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </ion-content>
+</ion-view>

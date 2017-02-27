@@ -1,0 +1,18 @@
+<div ng-controller="CategoryBoxListController as cblc">
+    <div class="categoryBoxList">
+                    <div ng-repeat="categoryBox in cblc.categoryBoxList">
+                        <div class="storeSuggestionsContainer">
+                            <h3 class="storeSuggestionHeader">{{categoryBox.category}} Stores</h3>
+                            <div layout="row" layout-wrap layout-align="space-between">
+                                <div flex="30" class="singleStoreSuggestion" ng-repeat="suggestedStore in categoryBox.storesList">
+                                    <single-store-suggestion suggested-store="suggestedStore">
+                                    </single-store-suggestion>
+                                </div>
+                            </div>
+                            <div class="categoryBoxViewMore">
+                                <a ng-href="#/store/storesCollection/category/{{categoryBox.category}}/{{cblc.currentCity}}">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+</div>

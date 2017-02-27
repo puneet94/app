@@ -1,0 +1,65 @@
+<!--<md-toolbar>
+        <div class="md-toolbar-tools">
+                <h2>Mango (Fruit)</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="amc.dialogCancel()">
+                        <md-icon >Close</md-icon>
+                </md-button>
+        </div>
+</md-toolbar>-->
+<div class="authenticationModalContainer">
+        <form>
+                <div class="facebookAuthenticateButton" ng-click="amc.socialAuthenticate('facebook')">
+                        <span class="icon-container">
+      <i class="fa fa-facebook" aria-hidden="true"></i>
+    </span>
+                        <span class="text-container">
+      Log in with Facebook
+    </span>
+                        </button>
+                </div>
+        </form>
+        <div class="loginSeparator">
+                <span class="separatorLine"></span>
+                <span class="separatorText">or</span>
+        </div>
+        <div class="authModalFormContainer">
+                <div ng-show="amc.isSet(1)" ng-include="'app/authentication/views/login.html'"></div>
+                <div ng-show="amc.isSet(2)" ng-include="'app/authentication/views/register.html'"></div>
+        </div>
+        <div class="loginSeparator">
+                <span class="separatorLine"></span>
+        </div>
+        <div ng-show="amc.isSet(1)">
+                <div layout="row" layout-align="space-between center">
+                        <div class="signUpText authModalText">
+                                Dont have an account?
+                        </div>
+                        <div>
+                                <div class="signUpButton authModalButton" ng-click="amc.setTab(2)">
+                                        Sign Up
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div ng-show="amc.isSet(2)">
+                <div layout="row" layout-align="space-between center">
+                        <div class="signUpText authModalText">
+                                Already have an account?
+                        </div>
+                        <div>
+                                <div class="loginButton authModalButton" ng-click="amc.setTab(1)">
+                                        Log In
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+
+<div hide-gt-xs>
+    <md-button class="md-raised md-primary" ng-click="amc.cancelDialog()">
+                        Close
+
+                </md-button>
+    
+</div>

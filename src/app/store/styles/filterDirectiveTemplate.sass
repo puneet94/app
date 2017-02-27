@@ -1,0 +1,105 @@
+div,span,li
+  &:focus
+    outline: none
+
+@import ../../app-modules/styles/main.sass
+.filterDirectiveTemplate
+  background-color: white
+  border: 1px solid #e1e8ed
+  border-radius: 3px
+  font-family: 'Source Sans Pro', sans-serif
+  margin-top: 7px
+  .filterLoadMore
+    padding: 10px
+    font-size: 12px
+    color: #099E44
+  .filterHeader
+    margin: 15px 10px
+    color: #cb202d
+  
+  input[type="radio"]
+    &:checked + span
+      font-weight: bold
+      color: red
+  span
+    cursor: pointer
+    &:hover
+      color: red
+.filterNameContainer
+  margin-bottom: 5px
+  .filterNameHeader
+    margin: 0
+    text-transform: capitalize
+    font-size: 14px
+    margin-left: 10px
+
+  .clearFilterButton
+    background: none
+    color: black
+    border: none
+    font-size: 10px
+    margin-right: 8px
+.filterRadioContainer
+  padding: 10px
+  border: 1px solid #e1e8ed
+  border-radius: 2px
+  position: relative
+  &:after 
+    content: " " /* Older browser do not support empty content */
+    visibility: hidden
+    display: block
+    height: 0
+    clear: both
+  .dummy-ink
+    position: absolute
+    top: 0
+    bottom: 0 
+    left: 0
+    right: 0
+    
+  .filterRadio
+    float: right
+  .filterLabel
+    width: 100%
+    display: block
+    text-transform: capitalize
+    z-index: 5
+    .radioText
+      font-size: 13px
+    
+    
+  .filterNameHeading
+    background-color: teal
+    padding: 10px
+    border-radius: 5%
+    color: white
+    h5
+      margin: 0
+      float: left
+    .clearFilterButton
+      float: right
+      border: 1px solid white
+      background-color: white
+      font-size: 12px
+      padding: 2px 5px
+      border-radius: 2px
+      color: black
+      display: block
+  .filterDirectiveRadioGroup
+    height: 160px
+    padding: 10px
+    overflow-y: auto
+    background-color: white
+
+    .filterRadioButton
+      font-size: 14px
+      margin: 8px
+      font-weight: 500
+      text-transform: capitalize
+      ._md-label
+        margin-left: 5px
+      ._md-container
+        display: none
+
+    .highlightClass
+      color: red

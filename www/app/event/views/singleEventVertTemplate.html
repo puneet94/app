@@ -1,0 +1,33 @@
+<div class="singleVertEventContainer">
+        <div class="eventVertImageContainer">
+                <div class="suggestedEventImage">
+                        <img ng-src="{{event.bannerImage}}" alt="" />
+                </div>
+                <div class="eventImageDate" md-whiteframe="5">
+                        {{event.startDate | date : 'dd MMM'}}
+                </div>
+                <div class="adminEventTag" ng-if="isAdminEvent">
+                        <a ng-href="#/admin/adminEditEvent/{{event.store._id}}/{{event._id}}">Edit</a>
+                </div>
+        </div>
+        <div class="eventVertDetailsContainer">
+                <div layout="column" flex layout-align="space-between center" style="height:100%">
+                        <div>
+                                <h3 class="eventDetailsHeader">{{event.tagline}}</h3>
+                        </div>
+                        <div class="eventCategoryContainer">
+                                <span ng-repeat="category in event.category" class="customChip">{{category}}</span>
+                        </div>
+                        <div class="eventLocation">
+                                <span class="eventAddressEntity">{{event.address.area+" ,"+event.address.locality+", "+event.address.state}}</span>
+                        </div>
+                        <div class="eventMore">
+                                <a ng-href="#/event/{{event._id}}" class="eventViewMore">
+                                        
+                                                View More
+                                        
+                                </a>
+                        </div>
+                </div>
+        </div>
+</div>

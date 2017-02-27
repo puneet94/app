@@ -1,0 +1,48 @@
+.reviewSubmitForm
+  background-color: white 
+  padding: 25px
+  .reviewSubmitFormContent
+    background-color: white 
+.userRatingSection
+  width: 175px
+  .rating
+    border: none
+    input
+      display: none
+    label:before
+      margin: 5px
+      font-size: 1.25em
+      font-family: FontAwesome
+      display: inline-block
+      content: "\f005"
+    label
+      color: rgba(0,0,0,0.5)
+      float: right
+    input:checked ~ label
+      color: #FFD700
+    &:not(:checked) > label:hover
+      color: #FFD700
+      ~ label
+        color: #FFD700
+    >
+      input:checked
+        + label:hover, ~ label:hover
+          color: #FFED85
+      label:hover ~ input:checked ~ label, input:checked ~ label:hover ~ label
+        color: #FFED85
+
+
+.likeReviewContainer
+  .likeReviewIconContainer
+    background-color: #eee
+    padding: 8px 10px
+    .likeText
+      margin-left: 5px
+  .likeReviewCountContainer
+    background-color: white
+    padding: 7px 9px
+    border: 1px solid #eee
+    border-radius: 3px
+    border-left: none
+    border-top-left-radius: 0px
+    border-bottom-left-radius: 0px

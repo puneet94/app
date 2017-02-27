@@ -1,0 +1,12 @@
+<div class="" ng-controller="UserFeedController as ufl">  
+	
+    	
+  	<div ng-repeat="activity in ufl.activityData track by $index">
+  		<p bind-html-compile="activity"></p>		
+  	</div>
+  	<inner-loading-directive inner-loading="ufl.loading" container-height="200px"></inner-loading-directive>
+  	<p style="text-align: center" ng-show="!ufl.loading">
+  		End of activity
+  	</p>
+  	<md-button class="md-raised md-primary" ng-click="ufl.loadMoreFeed()">Load More</md-button>
+</div>

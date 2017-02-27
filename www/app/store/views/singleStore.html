@@ -1,0 +1,128 @@
+<ion-view cache-view="false">
+        <ion-content>
+                <div>
+                        <div class="storeLeftPane">
+                                <div class="storeImageContent">
+                                        <div ng-if="!ssc.storeData.admin" class="businessClaimButton">
+                                                <md-button class="md-primary md-raised " ng-click="showAlert($event)">
+                                                        Own this store?
+                                                </md-button>
+                                        </div>
+                                        <div ng-if="ssc.storeData.admin && ssc.authCheck" class="businessClaimButton">
+                                                <a class="md-primary md-raised " style="text-decoration:none;color: white;padding:10px;background-color: rgb(0,188,212);"  ui-sref="('tabs.chatBox',{creator1:ssc.storeData.admin,creator2:ssc.currentUserId})" >
+                        Chat with admin
+                    </a>
+                                        </div>
+                                        <div class="storeBannerImage" style='background-image:url("{{ssc.storeData.bannerImage}}")'>
+                                        </div>
+                                        <div class="storeHeadingRating" layout="row" layout-align="space-between">
+                                                <div layout="row">
+                                                        <h1 class="singleStoreHeading">{{::ssc.storeData.name}} </h1>
+                                                </div>
+                                                <div>
+                                                        <h3>
+                     <span><i class="fa fa-pencil-square" aria-hidden="true"></i></span>
+                     <span>{{::ssc.storeData.storeRatingAvg.toFixed(1)}}/5</span>
+                  </h3>
+                                                </div>
+                                        </div>
+                                        <div class="userInteractionNav" ng-if="ssc.authCheck">
+                                                <div class="" layout="row">
+                                                        <div class="userStoreVisitCheck userInteractionContainers" ng-controller="UserStoreVisitController as usv">
+                                                                <span class="chipType" ng-if="!usv.userStoreVisited" ng-click="usv.submitVisit()">
+                                <span>
+                                    <i aria-hidden="true" class="fa fa-bookmark-o"></i>
+                                </span>
+                                                                <span class="chipText">Visit</span>
+                                                                </span>
+                                                                <span class="chipType" ng-if="usv.userStoreVisited" ng-click="usv.deleteVisit()">
+                                <span>
+                                    <i aria-hidden="true" class="fa fa-bookmark"></i>
+                                </span>
+                                                                <span class="chipText">
+                                    Visited
+                                </span>
+                                                                </span>
+                                                        </div>
+                                                        <div class="userStoreVisitCheck userInteractionContainers" ng-controller="UserStoreFollowController as usf">
+                                                                <span class="chipType" ng-if="!usf.userStoreFollowed" ng-click="usf.submitFollow()">
+                        <span>
+                           <i class="fa fa-user-plus" aria-hidden="true"></i>
+                           
+                        </span>
+                                                                <span class="chipText">Follow</span>
+                                                                </span>
+                                                                <span class="chipType" ng-if="usf.userStoreFollowed" ng-click="usf.deleteFollow()">
+                        <span>
+                           <i class="fa fa-user" aria-hidden="true"></i>
+                        </span>
+                                                                <span class="chipText">
+                           Followed
+                        </span>
+                                                                </span>
+                                                        </div>
+                                                        <div class="userStoreVisitCheck userInteractionContainers">
+                                                                <span class="chipType" ng-click="ssc.showStoreReportDialog($event)">
+                                <span>
+                                    <i aria-hidden="true" class="fa fa-exclamation-triangle"></i>
+                                </span>
+                                                                <span class="chipText">Report</span>
+                                                                </span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="customTabsContainer">
+                                        <ul class="tabsList">
+                                                <li ng-click="ssc.setTab(1)" ng-class="{customTabActive:ssc.isSet(1)}">Info</li>
+                                                <li ng-click="ssc.setTab(2)" ng-class="{customTabActive:ssc.isSet(2)}">Reviews</li>
+                                                <li ng-click="ssc.setTab(3)" ng-class="{customTabActive:ssc.isSet(3)}">Products</li>
+                                                <li ng-click="ssc.setTab(4)" ng-class="{customTabActive:ssc.isSet(4)}">Images</li>
+                                        </ul>
+                                </div>
+                                <div ng-show="ssc.isSet(1)">
+                                        <div class="animated slideInLeft" ng-include="'app/store/views/storeAddressDetails.html'"></div>
+                                </div>
+                                <div ng-show="ssc.isSet(2)">
+                                        <div class="animated slideInLeft">
+                                                <div ng-include="'app/reviews/views/storeReviewList.html'">
+                                                </div>
+                                                <div ng-include="'app/reviews/views/storeReviewSubmit.html'" ng-if="ssc.authCheck">
+                                                </div>
+                                        </div>
+                                </div>
+                                <div ng-show="ssc.isSet(3)">
+                                        <div class="animated slideInLeft" ng-include="'app/product/views/productsStoreCollection.html'"></div>
+                                </div>
+                                <div ng-show="ssc.isSet(4)">
+                                        <div>
+                                                <h2>Images</h2>
+                                        </div>
+                                        <div layout="row" class="storeImagesCollection">
+                                                <images-list-directive images-list="ssc.storeData.storeImages"></images-list-directive>
+                                        </div>
+                                </div>
+                        </div>
+                        <div flex="100">
+                                <aside class="storeSuggestionsMainContainer">
+                                        
+                                        <div class="storeSuggestionsContainer">
+                                                <h3 class="storeSuggestionHeader">Few More</h3>
+                                                <div class="row" style="flex-wrap: wrap;">
+                       				<div class="col col-33 singleStoreSuggestion" ng-repeat="suggestedStore in ssc.storeSuggestions">
+                                                                <single-store-suggestion suggested-store="suggestedStore">
+                                                                </single-store-suggestion>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!--<div class="mapContainer">
+                                                <ng-map zoom='15' center="{{ssc.pos}}" scrollwheel="false">
+                                                        <marker position="{{ssc.pos}}" animation="Animation.BOUNCE">
+                                                        </marker>
+                                                </ng-map>
+                                        </div>-->
+                                </aside>
+                        </div>
+                </div>
+        </ion-content>
+</ion-view>

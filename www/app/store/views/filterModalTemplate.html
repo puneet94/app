@@ -1,0 +1,15 @@
+<md-dialog>
+        <md-dialog-content>
+                <div>
+                        <md-button style="float:right;" class="md-raised md-primary" ng-click="cancelDialog()">Apply</md-button>
+                        <div style="clear: both"></div>
+                        <div>
+                                <div ng-repeat="filterItem in filtersList">
+                                        <filter-directive filter-name="{{filterItem.filterName}}" radio-repeat="filterItem.filterNames" radio-model="filterItem.filterModel">
+                                        </filter-directive>
+                                </div>
+                        </div>
+                </div>
+                
+        </md-dialog-content>
+</md-dialog>

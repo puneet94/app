@@ -1,0 +1,44 @@
+<div layout="column"  class="singleReview">
+	<div flex="100"  class="userSection">
+        <div layout="row" class="userProfile">
+          <div class="userImgSection">
+            <div class="userImg" style='background-image:url("{{review.user.picture}}")'></div>
+          </div>
+          <div class="userStats">
+            <ul>
+              <li class="userName">
+              	<a  ng-href="#/user/{{review.user._id}}">
+              		{{ ::review.user.displayName }}
+              	</a>
+              </li>
+              <li class="userLocation">{{ ::review.user.city }}</li>
+              <li class="userFollowers">{{ ::review.user.followers.length||0 }} Followers</li>
+              <li class="userReviews">{{ ::review.user.reviews.length }} Reviews
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div flex="100"class="contentSection">
+        <div class="ratingSection">
+          <span ng-repeat="i in reviewParams.getRating(review)">
+            <i aria-hidden="true" class="fa fa-star"></i>
+          </span>
+        </div>
+        <div class="reviewContent">
+          {{::review.description }}
+        </div>
+        
+
+        <div class="userReviewUpvoteSection" ng-if="authCheck">
+          <like-directive 
+            up-fn="reviewParams.submitUserReviewUpvote(review)" 
+            down-fn="reviewParams.deleteUserReviewUpvote(review)" 
+            upv-chk="reviewParams.userReviewUpvoted(review)"
+            small-loading="reviewParams.smallLoadingModel[review._id]"
+            current-review="review">    
+          </like-directive>
+        </div>
+      </div>
+
+</div>

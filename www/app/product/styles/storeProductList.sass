@@ -1,0 +1,61 @@
+@import ../../app-modules/styles/main.sass
+.productContainer
+  padding: 10px
+  .singleProductContainer
+    background-color: white
+    margin: 5px
+    width: 48%
+    .productImageContainer
+      width: 100%
+      padding: 5px
+      height: 100%
+      .singleProductImage
+        width: 100%
+        height: 180px
+        img
+          width: 100%
+          height: 100%
+        
+    .productDetailsContainer
+      padding: 5px
+      text-transform: capitalize
+      .productName
+        font-size: 16px
+        font-weight: 700
+        text-transform: capitalize
+        margin: 3px 0
+        cursor: pointer
+      .productCategory
+        font-size: 11px
+        padding: 2px 5px
+        background-color: green
+        margin: 2px
+        color: white
+        border-radius: 2px
+      .productSubCategory
+        font-size: 11px
+        padding: 2px 5px
+        background-color: blue
+        margin: 2px
+        color: white
+        border-radius: 2px
+      .productPrice
+        font-size: 12px
+        padding: 5px 10px
+        border-radius: 2px
+        color: white
+        background-color: rgb(203,32,45)
+      .productStatsContainer
+        font-size: 14px
+        font-weight: 600
+        .productStatsEntity
+          margin: 0 2px 
+
+
+@media (max-width: 600px)
+  .productContainer
+    .singleProductContainer
+      background-color: white
+      margin: 10px
+      max-width: 100%
+

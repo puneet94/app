@@ -1,0 +1,35 @@
+<ion-view >
+
+    <div class="bar bar-subheader align-title-left">
+        <h4 class="title">
+            My Chats
+        </h4>
+    </div>
+    <ion-content class="has-header has-subheader">
+        <div ng-controller="ChatRoomListController as crl" style="margin-top:5px;">
+            <inner-loading-directive inner-loading="crl.innerLoading" container-height="200px"></inner-loading-directive>
+            <div class="list">
+
+                <div class="item item-avatar" ng-click="crl.openChatbox(chatRoom)" collection-repeat="chatRoom in crl.chatRoomList">
+
+
+                    <img ng-src="{{chatRoom.creator2.picture}}" ng-if="crl.currentUser == chatRoom.creator1._id" />
+                    <img ng-src="{{chatRoom.creator1.picture}}" ng-if="crl.currentUser == chatRoom.creator2._id" />
+
+                    <h2 ng-if="crl.currentUser == chatRoom.creator1._id">
+                        {{chatRoom.creator2.displayName}}
+                    </h2>
+                    <h2 ng-if="crl.currentUser == chatRoom.creator2._id">
+                        {{chatRoom.creator1.displayName}}
+                    </h2>
+                    <p>{{chatRoom.lastMessage.message}}</p>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </ion-content>
+</ion-view>

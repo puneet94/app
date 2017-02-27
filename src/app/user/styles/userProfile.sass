@@ -1,0 +1,134 @@
+.userPageSections
+	.middleTab
+		.mainContainer
+			background-color: white
+		.userProfileSection
+			background-color: white
+		.imageContainer
+			float: left
+			height: 140px
+			width: 140px
+			margin: 0 10px
+			img
+				width: 100%
+				height: 100%
+				border: 1px solid #eee
+				border-radius: 7px
+		.textContainer
+			text-transform: capitalize
+			.nameContainer
+				text-transform: capitalize
+			margin-left: 180px
+			.headLineConatiner
+				.headLineHeader
+					margin: 0
+					font-size: 16px
+					font-weight: 600
+			.bioContainer
+				h5
+					margin-top: 10px
+					font-size: 16px
+					font-weight: 300
+	.rightTab
+		background-color: #f3f3f3
+.userFollowingImage
+	width: 180px
+	height: 180px
+	border: 15px inset
+	img
+		width: 100%
+		height: 100%
+
+.userProfileImage
+	
+	position: relative
+	height: 100%
+	transition: all 1s ease
+	img
+		width: 100%
+		height: 100%
+	.imageUpload
+		visibility: hidden
+		height: 0
+  		opacity: 0
+  		transition: all 1s ease
+		.imageUploadClick
+			background: none
+			color: white
+			font-size: 32px
+			border: none
+.userProfileImage:hover .imageUpload
+	width: 100%
+	background: rgba(0,0,0,.5)
+	position: absolute
+	top: 0
+	left: 0
+	opacity: 1
+	box-sizing: border-box
+	text-align: center
+	color: white
+	//padding: 12px
+	font-size: 20px
+	line-height: 180px
+	visibility: visible
+	height: 100%
+  	opacity: 1
+  	
+  	
+@media all and (max-width: 600px)
+	.userPageSections
+		.middleTab
+			.mainContainer
+			    .imageContainer
+			      float: left
+			      height: 100px
+			      width: 100px
+			      margin: 0 10px
+			      img
+			        width: 100%
+			        height: 100%
+			        border: 1px solid #eee
+			        border-radius: 7px
+			    .textContainer
+			      margin-left: 10px
+			      .nameContainer
+			        min-height: 20px
+			        .nameHeader
+			          font-size: 18px
+			          font-weight: 800
+			          margin: 0
+			          
+			      .headLineConatiner
+			        min-height: 50px
+			        margin-left: 100px
+			        h4
+			          font-size: 14px
+			          font-weight: 500
+			      .bioContainer
+			        h5
+			          font-size: 14px
+			          font-weight: 400  	
+
+
+.userContent
+	margin-top: 10px
+
+.userSuggestions
+	margin-left: 20px
+	margin-top: 20px
+
+.userSuggestionsContainer
+	max-height: 300px
+	overflow: auto
+	width: 80%
+	
+
+@media (max-width: 600px) 
+	.userSuggestions
+		margin: 5px
+
+	.userSuggestionsContainer
+		max-height: 400px
+		overflow: auto
+		width: 100%
+		

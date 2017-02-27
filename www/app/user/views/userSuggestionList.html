@@ -1,0 +1,17 @@
+<div class="followersList">
+	
+
+<div layout="row" layout-fill="layout-fill" layout-wrap="layout-wrap" flex-xs="100" flex-sm="100" flex="100" class="followerContainer" ng-repeat = "user in usersList">
+	      <div flex="30" class="followerImage" afkl-lazy-image={{::user.picture}}>
+	      	
+	      </div>
+	      <div layout="column" layout-align="center start" flex="50" class="followerInfo">
+	        <div class="followerName"><span ng-click=vm.getUserPage(user._id)>{{::user.displayName}}</span></div>
+	        <div class="followerLength"><span>{{user.followers.length}} Followers</span></div>
+	      </div>
+	      <div flex="20" layout="column" layout-align="center end" class="followUser" ng-if="vm.authCheck">
+	        <button class="md-raised md-primary followUserButton" ng-click="vm.deleteUserFollow(user._id)" ng-if="vm.currentUserFollowed(user._id)">followed</button>
+	        <button class="md-raised  followUserButton" ng-click="vm.submitUserFollow(user._id)" ng-if="!vm.currentUserFollowed(user._id)">follow</button>
+	      </div>
+	    </div>
+	    </div>

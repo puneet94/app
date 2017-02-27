@@ -1,0 +1,81 @@
+<!--<header layout="row">
+    <div ng-include="'app/home/pageHeader.html'" flex></div>
+</header>-->
+
+<ion-view>
+  <ion-content>
+  <div class="userPageContainer">
+    <div class="userPageSections" layout="column" >
+      <div class="middleTab" flex="100" >
+        <div class="mainContainer">
+          <div class="imageContainer">
+            <div class="userProfileImage" afkl-lazy-image={{upc.currentUserData.picture}}>
+              <div class="imageUpload" ng-if="upc.authCheck">
+                <div class="" ng-if="upc.currentUser()">
+                  <div ng-include="'app/user/views/userProfileImageUpload.html'" flex></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="textContainer">
+            <div class="nameContainer">
+              <h1 class="nameHeader">
+                          <span>{{upc.currentUserData.displayName}}</span>
+                        </h1>
+            </div>
+            <div class="headLineConatiner">
+              <h4 class="headLineHeader">{{upc.currentUserData.status ||"No status provided by user"}} </h4>
+            </div>
+            <div class="bioContainer">
+              <h5>
+                {{upc.currentUserData.bio ||"No bio provided by user"}}
+                            
+              </h5>
+            </div>
+          </div>
+          <div style="clear:both;"></div>
+        
+        <div class="userProfileSection">
+          <div class="userProfileImageContainer" layout="row" layout-margin>
+            <div class="userFollowSection" ng-if="upc.authCheck && !upc.currentUser()">
+              <follow-directive up-fn="upc.submitUserFollow(upc.currentUserData._id)" down-fn="upc.deleteUserFollow(upc.currentUserData._id)" upv-chk="upc.userFollowed(upc.currentUserData._id)" small-loading="upc.smallLoadingModel">
+              </follow-directive>
+            </div>
+            <div class="userChatSection">
+              <div ng-if="!upc.currentUser()">
+                <a ng-href="#/chatBox/{{upc.currentProfileUser}}/{{upc.loggedUser}}" target="_self">Chat</a>
+              </div>
+            </div>
+            <div class="userSocialMedia">
+                  <a target="_blank" ng-if="upc.currentUserData.facebook" ng-href="https://www.facebook.com/{{upc.currentUserData.facebook}}">Facebook</a>
+                </div>
+          </div>
+          
+        </div></div>
+        <div class="userContent">
+              <div class="" ng-include="'app/user/views/userStatisticsPage.html'"></div>
+            </div>
+      </div>
+      <div class="rightTab" flex="100">
+        <div ng-controller="UserPageSuggestionController as upsc">
+          <div class="userSuggestions">
+            <h3>User Suggestions</h3>
+            <div class="userSuggestionsSearchContainer">
+              <div class="userSuggestionsSearchBox formEntity">
+                <input type="text" ng-model="upsc.userSuggestionsModel" class="formEntityInput"/>
+              </div>
+            </div>
+          <div  class="userSuggestionsContainer">
+
+            <user-suggestion-list users-list="upsc.usersList"></user-suggestion-list>  
+          </div>  
+          </div>
+          
+          
+        </div>
+      </div>
+
+    </div>
+
+    </ion-view>
+  </ion-content>

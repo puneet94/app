@@ -1,0 +1,58 @@
+  
+  <div layout="row" style="height:100%" layout-align="space-between stretch" layout-sm="column" layout-xs="column">
+      <div class="productImageContainer" flex="50" flex-sm="100" flex-xs="100">
+        <div class="singleProductImage" afkl-lazy-image="{{::product.bannerImage||product.images[0]||product.imagesMin[0]||'http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg'}}">
+        </div>  
+        <div ng-if="adminProduct">
+          <md-button class="md-raised md-primary" ng-click="showProductEditModal(product,$event)">Edit</md-button>
+        </div>
+      </div>
+      
+      <div class="productDetailsContainer" flex="50" flex-sm="100" flex-xs="100" layout="column" layout-align="space-between stretch">
+        <div layout="row" layout-align="space-between end">
+          <div class="productName" > 
+          <a ui-sref="tabs.singleProductPage({productId:product._id})">
+              {{::product.name}}
+          </a>
+          
+          </div>
+          <div class="productPrice"> {{::product.price.value}} {{::product.price.currency}}</div>
+        </div>
+        <div>
+          <div >
+            <span ng-repeat="category in product.category" class="productCategory">
+              {{::category}}
+            
+            </span>
+          </div>
+          <div>
+            <span ng-repeat="subCat in product.subCategory" class="productSubCategory">
+              {{::subCat}}
+            </span>
+          </div>
+        </div>
+        <div class="productStatsContainer" layout="row" layout-align="end none">
+          <div layout="row" layout-align="space-between none">
+            <div class="productStatsEntity">
+              <span> {{::product.reviewsCount}}</span>  
+              <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span> 
+            
+            </div>
+            <div class="productStatsEntity">
+              <span > {{::product.upvotesCount}}</span>  
+              <span><i class="fa fa-hand-paper-o" aria-hidden="true"></i></span>
+            
+            </div>
+            <div class="productStatsEntity">
+              <span > {{::product.visitsCount}}</span>  
+              <span><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span>
+              
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+  
+</div>  
+

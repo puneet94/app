@@ -1,0 +1,73 @@
+<div ng-controller='AuthController as ahc'>
+        <div ng-if="ahc.isAuth" layout="row">
+                <div ng-controller="UserChatNotificationController as ucn" layout="column" layout-align="center start">
+                        <md-menu md-offset="-220 60">
+                                <md-button class="md-icon-button" style="padding:0;" ng-click="ucn.openMenu($mdOpenMenu, $event)">
+                                        <span style="font-size:30px;color:white" ng-if="!ucn.messageReceived">
+                      <i class="fa fa-comments" aria-hidden="true"></i>
+                    </span>
+                                        <span style="font-size:30px;" class="shakeElement" ng-if="ucn.messageReceived">
+                      <i class="fa fa-comments" aria-hidden="true"></i>
+                    </span>
+                                </md-button>
+                                <md-menu-content width="2" style="padding:5px;" class="mdMenuContainer">
+                                        <h3 style="margin:0;">My Chats</h3>
+                                        <div ng-if="!ucn.messageReceived">
+                                                <div ng-include="'app/chat/views/chatRoomList.html'"></div>
+                                        </div>
+                                </md-menu-content>
+                        </md-menu>
+                </div>
+                <div ng-controller="UserActionListController as ualc">
+                        <md-menu md-offset="-140 60">
+                                <div aria-label="Open phone interactions menu " class="md-icon-button userActivityButtonContainer " ng-click="ualc.openMenu($mdOpenMenu, $event) ">
+                                        <span>
+              <img class="userActionListImage " ng-src={{ualc.userProfilePic}}>
+            </span>
+                                        <span class="userName ">
+              {{ualc.user.displayName.split(" ")[0]}}
+            </span>
+                                        <span class="dropIcon "><i class="fa fa-caret-down " aria-hidden="true "></i></span>
+                                        <span style="clear:both; "></span>
+                                </div>
+                                <md-menu-content width="2 " class="mdMenuContainer">
+                                        <md-menu-item>
+                                                <md-button ng-click="ualc.getUserPage() ">
+                                                        {{ualc.user.displayName}}
+                                                </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                                <a ng-href="#/userProfileSettings">Profile Settings</a>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                                <a ng-href="#/userAccountSettings">Account Settings</a>
+                                        </md-menu-item>
+                                        <h3 class="menuHeading ">My Stores</h3>
+                                        <md-menu-item ng-repeat="userStore in ualc.userStoresList ">
+                                                <md-button aria-label="User store " ng-click="ualc.getAdminStore(userStore._id) ">
+                                                        {{userStore.name}}-{{userStore.address.locality}}
+                                                </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                                <md-button aria-label="Create new store " ng-click="ualc.createNewStore() ">
+                                                        Create Store
+                                                </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                                <md-button aria-label="Logout " ng-click="ahc.authLogout() ">
+                                                        Logout
+                                                </md-button>
+                                        </md-menu-item>
+                                </md-menu-content>
+                        </md-menu>
+                </div>
+        </div>
+        <div ng-if="!ahc.isAuth " layout-xs="column " layout-align-xs="space-between center ">
+                <md-button class="md-raised " aria-label="login" ng-click="ahc.showAuthenticationDialog($event)">
+                        Login
+                </md-button>
+                <md-button class="md-raised " aria-label="Login with facebook " ng-click="ahc.authenticate( 'facebook') ">
+                        facebook
+                </md-button>
+        </div>
+</div>

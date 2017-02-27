@@ -1,0 +1,23 @@
+<ion-tabs class="tabs-icon-top tabs-positive">
+        <ion-tab title="Home" icon="ion-home" href="#/tab/tabsHome">
+                <ion-nav-view name="home-tab"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Me" ng-if="tc.isAuthenticated" icon="ion-ios-information" ui-sref="tabs.mePage">
+                <ion-nav-view name="mePage-tab"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Feed" icon="ion-ios-world" ui-sref="tabs.userFeed">
+                <ion-nav-view name="userFeed-tab"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Chat" ng-if="tc.isAuthenticated" icon="ion-ios-world" ui-sref="tabs.chatRooms">
+                <ion-nav-view name="chatRooms-tab"></ion-nav-view>
+        </ion-tab>
+        <ion-tab hidden="true">
+                <ion-nav-view name="store-tab"></ion-nav-view>
+        </ion-tab>
+        <ion-tab hidden="true">
+                <ion-nav-view name="product-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Login" ng-if="!tc.isAuthenticated" icon="ion-ios-world" ng-click="tc.showAuthenticationDialog($event)">
+        </ion-tab>
+</ion-tabs>

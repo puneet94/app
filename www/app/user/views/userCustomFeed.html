@@ -1,0 +1,15 @@
+<div class="" ng-controller="UserCustomFeedController as ucfc">  
+	
+    	
+
+
+
+  	<div ng-repeat="activity in ucfc.activityData track by $index">
+  		<p bind-html-compile="activity"></p>		
+  	</div>
+  	<inner-loading-directive inner-loading="ucfc.loading" container-height="200px"></inner-loading-directive>
+  	<p style="text-align: center" ng-show="!ucfc.loading">
+  		End of activity
+  	</p>
+  	<md-button class="md-raised md-primary" ng-click="ucfc.loadMoreFeed()">Load More</md-button>	
+</div>

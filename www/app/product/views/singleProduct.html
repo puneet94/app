@@ -1,0 +1,93 @@
+<ion-view>
+        <ion-content>
+                <main flex>
+                        <div class="" layout="row" layout-xs="column" layout-sm="column">
+                                <div class="storeLeftPane" flex-sm="100" flex-xs="100" flex="70">
+                                        <div>
+                                                <div class="productPageContainer">
+                                                        <div class="singleProductContainer">
+                                                                <div class="productTopContainer">
+                                                                        <div layout="row" layout-xs="column" layout-sm="column" class="productDetailsContainer">
+                                                                                <div flex-xs="100" flex-sm="100" flex="60" class="productImageContainer">
+                                                                                        <img ng-src="{{spc.product.images[0] || spc.product.bannerImage||spc.product.productImages[0]||'https://d152j5tfobgaot.cloudfront.net/wp-content/uploads/2016/08/125-fall-in-love.png'}}" class="productImage" />
+                                                                                </div>
+                                                                                <div flex-xs="100" flex-sm="100" flex="40" class="productBriefContainer">
+                                                                                        <div layout="row" layout-align="space-between center">
+                                                                                                <div class="productName">
+                                                                                                        <span>{{::spc.product.name}}</span>
+                                                                                                </div>
+                                                                                                <div class="productPrice"><span>{{::spc.product.price.value}}-{{::spc.product.price.currency}}</span></div>
+                                                                                        </div>
+                                                                                        <div class="productCategory"><span>{{::spc.product.category.join(",")}}</span></div>
+                                                                                        <div class="productSubCategory"><span>{{::spc.product.subCategory.join(",")}} </span></div>
+                                                                                        <br>
+                                                                                        <div class="userInteractionNav" layout="row" ng-if="spc.authCheck">
+                                                                                                <div class="" ng-controller="UserStoreVisitController as usv">
+                                                                                                        <div class="userStoreVisitCheck">
+                                                                                                                <span class="chipType" ng-if="!usv.userStoreVisited" ng-click="usv.submitVisit()">
+                                                  <span>
+                                                    <i aria-hidden="true" class="fa fa-bookmark-o"></i>
+                                                  </span>
+                                                                                                                <span class="chipText">Purchase</span>
+                                                                                                                </span>
+                                                                                                                <span class="chipType" ng-if="usv.userStoreVisited" ng-click="usv.deleteVisit()">
+                                                  <span>
+                                                    <i aria-hidden="true" class="fa fa-bookmark"></i>
+                                                  </span>
+                                                                                                                <span class="chipText">
+                                                    Purchased
+                                                  </span>
+                                                                                                                </span>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="productMiddleContainer">
+                                                                        <div class="productReviewsBrief">
+                                                                                <div class="customTabsContainer">
+                                                                                        <ul class="tabsList">
+                                                                                                <li ng-click="spc.setTab(1)" ng-class="{customTabActive:spc.isSet(1)}">Reviews</li>
+                                                                                                <li ng-click="spc.setTab(2)" ng-class="{customTabActive:spc.isSet(2)}">Stores</li>
+                                                                                                <li ng-click="spc.setTab(3)" ng-class="{customTabActive:spc.isSet(3)}">Images</li>
+                                                                                        </ul>
+                                                                                </div>
+                                                                                <div ng-show="spc.isSet(1)">
+                                                                                        <div class="animated slideInLeft">
+                                                                                                <div class="" ng-include="'app/reviews/views/productReviewList.html'">
+                                                                                                </div>
+                                                                                                <div class="" ng-include="'app/reviews/views/storeReviewSubmit.html'" ng-if="spc.authCheck">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div ng-show="spc.isSet(2)">
+                                                                                        <div class="animated slideInLeft">
+                                                                                                <div class="storeSuggestionsContainer">
+                                                                                                        <div layout="row" layout-wrap layout-align="space-between">
+                                                                                                                <div flex="25" class="singleStoreSuggestion" ng-repeat="suggestedStore in spc.productStoreList">
+                                                                                                                        <single-store-suggestion suggested-store="suggestedStore">
+                                                                                                                        </single-store-suggestion>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div ng-show="spc.isSet(3)">
+                                                                                        <div>
+                                                                                                <h2>Images</h2>
+                                                                                        </div>
+                                                                                        <div layout="row" class="storeImagesCollection">
+                                                                                                <images-list-directive images-list="spc.product.images"></images-list-directive>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </main>
+        </ion-content>
+</ion-view>

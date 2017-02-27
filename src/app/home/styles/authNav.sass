@@ -1,0 +1,80 @@
+.shakeElement
+	animation: shake 2s infinite
+	-webkit-animation: shake 2s infinite
+	transform: translate3d(0, 0, 0)
+	backface-visibility: hidden
+	perspective: 1000px
+
+@-webkit-@keyframes shake
+	10%, 90%
+		transform: translate3d(-1px, 0, 0)
+
+	20%, 80%
+		transform: translate3d(2px, 0, 0)
+		color: red
+
+	30%, 50%, 70%
+		transform: translate3d(-4px, 0, 0)
+
+	40%, 60%
+		transform: translate3d(4px, 0, 0)
+
+@keyframes shake
+	10%, 90%
+		transform: translate3d(-1px, 0, 0)
+		
+
+	20%, 80%
+		transform: translate3d(2px, 0, 0)
+		color: red
+
+	30%, 50%, 70%
+		transform: translate3d(-4px, 0, 0)
+
+	40%, 60%
+		transform: translate3d(4px, 0, 0)
+
+.mdMenuContainer
+	width: 250px
+	text-transform: capitalize
+	border: 1px solid #eee
+	border-radius: 3px
+	font-size: 10px
+	.md-button
+		span
+			width: 100%
+			text-transform: capitalize
+			overflow-x: hidden
+			text-overflow: ellipsis
+	.menuHeading
+		margin: 2px 5px
+.userActivityButtonContainer
+	border-radius: 2px 
+	font-size: 14px
+	height: 40px
+	margin: 10px
+	background-color: white
+	border: 2px solid white
+	&:hover
+		background-color: #E5E7EC
+		box-shadow: 0 0 0 1px transparent inset
+		color: rgba(0,0,0,.95)
+		border: 2px solid #e7e7e7
+		
+	span
+		float: left
+		margin: 5px
+		margin-top: 6px
+	.userName
+		text-transform: capitalize
+		margin-top: 10px
+		color: rgba(0,0,0,.95)
+	.dropIcon
+		margin-top: 10px
+		color: rgba(0,0,0,.95)
+	.userActionListImage
+		width: 24px
+		height: 24px
+		border-radius: 50%
+
+	  

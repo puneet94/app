@@ -1,0 +1,48 @@
+<div ng-controller="StoreReviewListController as srl" class="reviewListSection">
+  <h1 class="reviewHeadingText" >Reviews</h1>
+  <div  ng-repeat-start="review in srl.reviewList track by review._id">
+      <single-review-directive review-params="srl.reviewParams" review="review"></single-review-directive>
+      <!--
+      <div flex="25" flex-xs="100" flex-sm="100" class="userSection">
+        <div layout="row" class="userProfile">
+          <div class="userImgSection">
+            <div class="userImg" style='background-image:url("{{review.user.picture}}")'></div>
+          </div>
+          <div class="userStats">
+            <ul>
+              <li class="userName"><a  ng-click="srl.getUserPage(review.user._id)">{{ ::review.user.displayName }}</a></li>
+              <li class="userLocation">{{ ::review.user.city }}</li>
+              <li class="userFollowers">{{ ::review.user.followers.length||0 }} Followers</li>
+              <li class="userReviews">{{ ::review.user.reviews.length }} Reviews
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div flex="70" flex-xs="100" flex-sm="100" class="contentSection">
+        <div class="ratingSection">
+          <span ng-repeat="i in srl.getRating(review)">
+            <i aria-hidden="true" class="fa fa-star"></i>
+          </span>
+        </div>
+        <div class="reviewContent">
+          {{::review.description }}
+        </div>
+        
+
+        <div class="userReviewUpvoteSection" ng-if="srl.authCheck">
+          <like-directive 
+            up-fn="srl.submitUserReviewUpvote(review)" 
+            down-fn="srl.deleteUserReviewUpvote(review)" 
+            upv-chk="srl.userReviewUpvoted(review)"
+            small-loading="srl.smallLoadingModel[review._id]"
+            current-review="review">    
+          </like-directive>
+        </div>
+      </div>-->
+
+  </div>
+  <div ng-repeat-end=""></div>
+
+
+</div>

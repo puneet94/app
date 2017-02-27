@@ -1,0 +1,15 @@
+<div ng-controller="ProductListController as plc" style="width:100%;min-height:200px;">
+        <h3 class="productListHeading">{{plc.productsSearchHeader.split("-").join(" ")}}</h3>
+        <div class="productContainer" layout="row" layout-wrap layout-align="center center">
+                <div class="singleProductContainer" md-whiteframe="2" flex-xs="100" ng-repeat="product in plc.productsList track by product._id">
+                        <single-product-directive single-product="product"> </single-product-directive>
+                        
+                </div>
+        </div>
+        <div style="position:relative">
+                <inner-loading-directive inner-loading="plc.loading" container-height="200px"></inner-loading-directive>
+        </div>
+        <div ng-if="plc.noProductsToShow">
+                <p style="text-align: center;">No product available</p>
+        </div>
+</div>

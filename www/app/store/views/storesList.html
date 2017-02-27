@@ -1,0 +1,78 @@
+
+<div ng-controller="StoreListController as slc">
+	<h3 class="storeListHeading">{{slc.storesSearchHeader.split("-").join(" ")}}</h3>
+	
+	<!--<h1 ng-if="slc.storesList.length==0">No stores available</h1>-->
+	<div ng-repeat="store in slc.storesList track by store._id">
+
+		<md-card >
+			<md-card-title>
+				<md-card-title-text>
+					<span class="md-headline">
+						<span ng-click="slc.getSingleStore(store)" class="storeNameHeading">{{store.name}}<span></span></span>
+					</span>
+					<div class="storeAddressDetails">
+						<div>
+							<span>{{::store.address.locality}}</span>
+							<span>{{::store.address.area}}</span>
+							<span>{{::store.address.city}}</span>
+							<span>{{::store.address.state}}</span>
+						</div>
+						<div>
+
+						</div>
+
+					</div>
+
+					<div class="storeListCategories">
+						<span class="storeListCategory" ng-repeat = "category in store.category">
+							{{::category}}	
+						</span>
+    					
+					</div>
+					<div class="storeListSubCategories">
+						<span class="storeListSubCategory" ng-repeat = "subCategory in store.subCategory">
+							{{::subCategory}}	
+						</span>
+    					
+					</div>
+				</md-card-title-text>
+
+				<md-card-title-media>
+					<div ng-click="slc.getSingleStore(store)" class="md-media-md card-media">
+						
+						<div class="storeCardImage"  afkl-lazy-image={{store.bannerImage}} >
+
+						</div>
+
+					</div>
+				</md-card-title-media>
+
+			</md-card-title>
+			<md-divider></md-divider>
+			<md-card-footer>
+				<div class="storeCardFooter" layout="row" layout-align="space-between start">
+					<div layout="row">
+						<span> {{::store.visitsCount}} Visits</span>
+
+					</div>
+					<div layout="row" style="cursor:pointer;">
+						<!--Add flow to query parameter
+						
+						<span ng-click="slc.getSingleStore(store,'flowReviews')">{{::store.reviewsCount}} Reviews </span>
+
+
+						<span ng-click="slc.getSingleStore(store,'flowProducts')"> {{::store.productsCount}} Products</span>-->
+
+						<span >{{::store.reviewsCount}} Reviews </span>
+						<span > {{::store.productsCount}} Products</span>
+					</div>
+				</div>
+
+ 			</md-card-footer>
+
+		</md-card>
+	</div>
+	<inner-loading-directive inner-loading="slc.loading" container-height="200px"></inner-loading-directive>
+	<button ng-click="slc.getStoresCollection()" ng-cloak ng-if="slc.storesList.length<slc.totalStores">LoadMore</button>
+</div>

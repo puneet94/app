@@ -1,0 +1,13 @@
+<div ng-controller="CategoryListController as clc">
+    <inner-loading-directive inner-loading="clc.innerLoading" container-height="200px"></inner-loading-directive>
+    
+    <ul class="cityCategoryList">
+        
+        <li class="cityCategoryListEntity" ng-repeat="category in clc.categoryList" ng-click="clc.categoryLinkClicked(category)">
+             <span>
+ 				{{ category }}
+ 			</span>  <span class="iconClass">
+ 				<i class="fa fa-angle-right" aria-hidden="true"></i>
+ 			</span>  </li>
+         </ul>
+</div>

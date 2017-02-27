@@ -1,0 +1,16 @@
+<div>
+    <div class="suggestedEventImage">
+        <div afkl-lazy-image="{{suggestedEvent.bannerImage}}"></div>
+    </div>
+    <div class="suggestedEventInfo">
+        <a ng-href="#/store/singleEvent/{{suggestedEvent._id}}">
+            <h5 class="suggestedEventName">{{suggestedEvent.title}}</h5>
+        </a>
+        <p class="suggestedEventAddress">
+        	{{suggestedEvent.address.area+" "}}
+        </p>
+        <p class="suggestedEventCategories">
+            {{suggestedEvent.category.join(" | ")}}
+        </p>
+    </div>
+</div>

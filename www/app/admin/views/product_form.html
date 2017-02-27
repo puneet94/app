@@ -1,0 +1,81 @@
+<div class="layout-column flex">
+        <div style="background: #FFF;" md-whiteframe="2">
+                <h3 class='formSectionHeaders'>Create Product</h3>
+                <form name="productFrom" class="" style="">
+                        <div layout="row" layout-align="space-around" layout-wrap layout-margin>
+                                <div class="formEntity" flex="45" flex-sm="100" flex-xs="100">
+                                        <label class="formEntityLabel" for="productName">Name</label>
+                                        <input class="formEntityInput" ng-model="csc.productForm.name" type="text" name="productName" required="required" />
+                                        <div ng-messages="" style="">
+                                                <div ng-message="required" class="" style="">This field is required</div>
+                                        </div>
+                                </div>
+                                <div class="formEntity" flex="45" flex-sm="100" flex-xs="100">
+                                        <label class="formEntityLabel" for="productQuantity">Quantity</label>
+                                        <input class="formEntityInput" ng-model="csc.productForm.quantity" type="number" name="productQuantity" />
+                                </div>
+                                <div class="formEntity" flex="45" flex-sm="100" flex-xs="100">
+                                        <label class="formEntityLabel" for="productPrice">Price</label>
+                                        <input class="formEntityInput" type="number" ng-model="csc.productForm.price.value" name="productPrice" />
+                                </div>
+                                <div class="formEntity" flex="45" flex-sm="100" flex-xs="100">
+                                        <label class="formEntityLabel" for="productPriceCurrency">Currency</label>
+                                        <input class="formEntityInput" type="text" ng-model="csc.productForm.price.currency" name="productPriceCurrency" />
+                                </div>
+                                <div class="formEntity" flex="45" flex-sm="100" flex-xs="100">
+                                        <md-button class="md-raised md-primary" type="file" ngf-select="csc.uploadSingleImage($file, $invalidFiles)" accept="image/*" ngf-max-height="5000" ngf-max-size="10MB">
+                                                Upload banner Image
+                                        </md-button>
+                                        <inner-loading-directive inner-loading="csc.formBannerLoading" container-height="100px"></inner-loading-directive>
+                                        <div style="width:90px;height:90px;" ng-if="csc.productForm.bannerImage || csc.uploadedImage">
+                                                <img ng-src="{{csc.productForm.bannerImage || csc.uploadedImage}}" style="width:100%;height:100%;" />
+                                        </div>
+                                </div>
+                                <div flex="45" flex-sm="100" flex-xs="100" class="formEntity">
+                                        <div>
+                                                <md-button class="md-raised md-primary" ngf-select="csc.uploadMultipleImages($files)" multiple accept="image/*">Upload Images</md-button>
+                                                {{csc.errorMsg}}
+                                        </div>
+                                        <inner-loading-directive inner-loading="csc.formImgListLoading" container-height="100px"></inner-loading-directive>
+                                        <div layout="row" class="productImagesCollection">
+                                                <images-list-directive images-list="csc.productForm.productImages">
+                                                </images-list-directive>
+                                        </div>
+                                </div>
+                                <div class="formEntity" flex="45" flex-sm="100" flex-xs="100">
+                                        <label class="formEntityLabel" for="productCategory">Category<small>(Press enter to separate multiples)</small></label>
+                                        <div>
+                                                <md-chips class="chipLook" ng-model="csc.productForm.category" name="productCategory" readonly="false" md-removable="true" md-max-chips="15">
+                                                        <md-chip-template>
+                                                                <strong>{{$chip}}</strong>
+                                                        </md-chip-template>
+                                                </md-chips>
+                                        </div>
+                                        <div class="errors" ng-messages="productForm.productCategory.$error">
+                                                <div ng-message="md-max-chips">The maxmium of chips is reached.</div>
+                                        </div>
+                                </div>
+                                <div class="formEntity" flex="45" flex-sm="100" flex-xs="100">
+                                        <label class="formEntityLabel" for="productSubCategory">Sub-Category<small>(Press enter to separate multiples)</small></label>
+                                        <div>
+                                                <md-chips class="chipLook" ng-model="csc.productForm.subCategory" name="productSubCategory" readonly="false" md-removable="true" md-max-chips="5">
+                                                        <md-chip-template>
+                                                                <strong>{{$chip}}</strong>
+                                                        </md-chip-template>
+                                                </md-chips>
+                                        </div>
+                                        <div class="errors" ng-messages="productForm.productSubCategory.$error">
+                                                <div ng-message="md-max-chips">The maxmium of chips is reached.</div>
+                                        </div>
+                                </div>
+                                <div class="formEntity" flex="100" flex-sm="100" flex-xs="100">
+                                        <label class="formEntityLabel" for="productDescription">Description</label>
+                                        <textarea style="height:auto" rows="7" class="formEntityInput" ng-model="csc.productForm.description" type="text" name="productDescription" required="required">
+                                        </textarea>
+                                </div>
+                        </div>
+                        <md-button class="md-raised md-primary" ng-click="csc.createProduct()">Submit
+                        </md-button>
+                </form>
+        </div>
+</div>

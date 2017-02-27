@@ -1,0 +1,43 @@
+<div ng-controller="UserStatisticsController as usc" layout="column" ng-cloak="">
+  <md-content >
+    <md-tabs md-selected="selectedIndex" md-border-bottom="" md-autoselect="" md-dynamic-height="">
+      
+      <md-tab  label="Followers">
+        <div class="demo-tab" >
+          <div ng-include="'app/user/views/userFollowersList.html'" flex></div>
+          <br>
+
+        </div>
+      </md-tab>
+      <md-tab  label="Reviews">
+        <div  >
+                <div ng-include="'app/reviews/views/userReviewList.html'" flex></div>
+
+          <br>
+
+        </div>
+      </md-tab>
+      <md-tab  label="Following">
+        <div class="demo-tab" >
+           <div ng-include="'app/user/views/userFollowingList.html'" flex></div>
+          <br>
+
+        </div>
+      </md-tab>
+      <md-tab  label="Activity">
+        <div class="demo-tab" >
+           <div ng-include="'app/user/views/userActivity.html'" flex></div>
+          
+
+        </div>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+
+
+</div>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
+-->

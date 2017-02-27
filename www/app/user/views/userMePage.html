@@ -1,0 +1,29 @@
+<ion-view has-header="true">
+    
+    <div class="bar bar-subheader">
+        <div class="row">
+          <div class="col col-50" ng-click="umpc.setTab(1)" ng-class="{customTabActive:umpc.isSet(1)}">
+                Profile Settings
+              
+            </div>
+          <div class="col" ng-click="umpc.setTab(2)" ng-class="{customTabActive:umpc.isSet(2)}">
+                    Account Settings
+              </div>
+  
+        </div>
+        
+    </div>
+    <ion-content class="has-subheader">
+        <div class="customTabsContainer">
+            
+            <div ng-show="umpc.isSet(1)">
+                <div ng-include="'app/user/views/userProfileSettingsPage.html'"></div>
+            </div>
+            <div ng-show="umpc.isSet(2)">
+                <div ng-include="'app/user/views/userAccountSettingsPage.html'">
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+

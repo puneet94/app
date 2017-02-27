@@ -1,0 +1,29 @@
+
+<ion-view has-header="true">
+    
+    <div class="bar bar-subheader">
+        <div class="row">
+          <div class="col col-50" ng-click="umfc.setTab(1)" ng-class="{customTabActive:umfc.isSet(1)}">
+              Local Feed
+            </div>
+          <div class="col" ng-if="umfc.authCheck" ng-click="umfc.setTab(2)" ng-class="{customTabActive:umfc.isSet(2)}">
+              My Feed
+              </div>
+  
+        </div>
+        
+    </div>
+    <ion-content class="has-subheader">
+        <div class="customTabsContainer">
+            
+            <div ng-show="umfc.isSet(1)">
+                <div ng-include="'app/user/views/userLocalFeed.html'"></div>
+            </div>
+            <div ng-show="umfc.isSet(2)">
+                <div ng-include="'app/user/views/userCustomFeed.html'">
+                </div>
+            </div>
+        </div>    
+    </ion-content>
+</ion-view>
+    

@@ -1,0 +1,18 @@
+md-dialog(aria-label="Login"  ng-cloak )
+	form
+		md-toolbar
+			div(class="md-toolbar-tools")
+				h2 Login
+				span(flex)
+				md-button(class="md-icon-button" ng-click="cancel()")
+					span X
+		md-dialog-content(layout="row")
+			div(class="md-dialog-content")
+				md-input-container(class="md-block")
+					input(ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true")
+				md-input-container(class="md-block")
+					input(ng-model="user.password" type="password" placeholder="Password (required)" ng-required="true")
+				section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
+					md-button(class="md-raised md-primary") Login
+		md-dialog-actions(layout="row")
+			md-button(class="md-icon-button" ng-click="cancel()") Close

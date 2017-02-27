@@ -1,0 +1,16 @@
+<div  ng-controller="SearchBoxController as sbc">
+        <div ng-show="sbc.mobileSearchBoxVisible" class="mobileSearchBoxContainer">
+                <div class="closeMobileSearchBoxContainer">
+                        <span ng-click="sbc.mobileSearchBoxVisible=false" class="closeText">Close</span>
+                </div>
+                <div class="searchBoxInputContainer">
+                        <input type="text" name="" ng-model="sbc.mobileText" ng-change="sbc.userSearchTextChange(sbc.searchText,sbc.mobileText)" placeholder="Search for store, product, brand">
+                </div>
+                <div class="mobileSearchListContainer">
+                        <div ng-repeat="item in sbc.userSearches">
+                                
+                        </div>
+                </div>
+        </div>
+        
+</div>

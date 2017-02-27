@@ -1,0 +1,67 @@
+.userImg
+  width: 50px
+  height: 50px
+  background-image: url("http://opstatic.com/img/profile/default_user.jpg")
+  background-size: cover
+.reviewListSection
+  padding: 5px
+  .singleReview
+    padding: 10px
+    background-color: white 
+    margin: 10px 0px
+    border-top: 1px solid #eee
+    .reviewContent
+      margin: 10px 0
+  .userSection
+    font-size: 12px
+  .userImg
+    width: 50px
+    height: 50px
+    background-image: url("http://opstatic.com/img/profile/default_user.jpg")
+    background-size: cover
+  .userStats
+    ul
+      list-style: none
+      margin: 0
+      padding-left: 10px
+      .userName
+        font-size: 14px
+        font-weight: bold
+      .userFollowers
+        font-weight: bold
+  .contentRatingSection
+    font-size: 11px
+    margin-top: 5px
+.userRatingSection
+  .rating
+  >
+    input
+      display: none
+    label:before
+      margin: 5px
+      font-size: 1.25em
+      font-family: FontAwesome
+      display: inline-block
+      content: "\f005"
+    .half:before
+      content: "\f089"
+      position: absolute
+    label
+      color: #ddd
+      float: right
+    input:checked ~ label
+      color: #FFD700
+  &:not(:checked) > label:hover
+    color: #FFD700
+    ~ label
+      color: #FFD700
+  >
+    input:checked
+      + label:hover, ~ label:hover
+        color: #FFED85
+    label:hover ~ input:checked ~ label, input:checked ~ label:hover ~ label
+      color: #FFED85
+
+/***** CSS Magic to Highlight Stars on Hover ****
+
+/* hover previous stars in list

@@ -1,0 +1,20 @@
+<div ng-controller="HeaderController as phc">
+    
+        <div layout="row" layout-align="space-between center">
+            <div class="logoSection">
+                <!--<md-icon md-src={{phc.imgSrc}} class="s24"></md-icon>-->
+                <span class="md-headline" ng-click="phc.toHomePage()">
+                  Shoppins
+               </span>
+            </div>
+            
+            <div hide show-xs class="search-icon-div" toggle-element=".scrollUpSearch">
+                <div class="search-icon">&#128269;</div>
+            </div>
+        </div>
+    
+    <!--
+    <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+        <div ng-include="'app/home/views/homePageSideNav.html'"></div>
+    </md-sidenav>-->
+</div>

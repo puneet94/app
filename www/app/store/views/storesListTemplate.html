@@ -1,0 +1,12 @@
+<div>
+	<ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+                         
+              </ion-refresher>
+	<inner-loading-directive inner-loading="spinnerLoading" container-height="200px"></inner-loading-directive>
+        <div ng-repeat="store in storesList">
+                <single-store store="store">
+                </single-store>
+        </div>
+        <md-button class="md-raised md-primary loadMoreButton" ng-click="loadMoreStores()" ng-disabled="storesList.length>=totalStores">
+                Load More </md-button>
+</div>

@@ -1,0 +1,14 @@
+<ion-view cache-view="false">
+        <ion-content>
+                <div class="storesNameCollection">
+                        <div layout="row" layout-wrap>
+                                <md-button class="md-raised md-primary" ng-click="sncc.showFilterDialog()">Filter</md-button>
+                                <div flex="100">
+                                        <h3>{{sncc.storesSearchHeader.split('-').join(" ")}}</h3>
+                                        <stores-list param-data="sncc.paramData">
+                                        </stores-list>
+                                </div>
+                        </div>
+                </div>
+        </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view hide-nav-bar="true">
+    <ion-header-bar align-title="center" class="bar-positive">
+        <h1 class="title">Search</h1>
+        <div class="buttons">
+            <button class="button" ng-click="sbpc.goBack()">Close</button>
+      </div>    
+    </ion-header-bar>
+<ion-content>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-android-locate placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="sbpc.citySearchModel" ng-focus="sbpc.openCityPage()">
+      </label>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-android-cart placeholder-icon"></i>
+        <input type="text" placeholder="Search for store,product,brand" ng-click="sbpc.openEntityPage()">
+      </label>
+    </div>
+       
+</ion-content>
+</ion-view>

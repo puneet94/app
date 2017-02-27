@@ -1,0 +1,16 @@
+<ion-view>
+        <ion-content>
+                <div layout="row" layout-wrap>
+                        <md-button class="md-raised md-primary" hide-lg hide-md ng-click="pncc.showFilterDialog()">Filter</md-button>
+                        
+                </div>
+                
+                        <h3 class="productListHeading">
+                                {{pncc.productsSearchHeader.split("-").join(" ")}}
+                        </h3>
+                        <products-list param-data="pncc.paramData"></products-list>
+                
+                
+                
+        </ion-content>
+</ion-view>

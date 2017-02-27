@@ -1,0 +1,152 @@
+@import ../../app-modules/styles/main.sass
+
+.singleStoreDetails
+  padding-left: 5%
+  .storeNameHeader
+    margin: 0
+    font-size: 24px
+.singleStoreMedia
+  img
+    border: 1px solid #e1e8ed
+    border-radius: 4px
+.storeSuggestionsMainContainer
+
+  margin-top: 20px
+
+.storeImagesCollection
+  background-color: white
+  padding: 5px
+.carouselContainer
+  position: fixed
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  background: rgba(0,0,0,0.9)
+  z-index: 99999999999
+.reviewHeadingText
+  @extend .capital-heading-text
+.addressHeadingText
+  @extend .capital-heading-text
+.storeImageContent
+  margin-top: 20px
+  background-color: #fafafa
+  border: 1px solid #e7e7e7
+  border-radius: 1px
+  position: relative
+  .businessClaimButton
+    position: absolute
+    button
+      color: white
+      text-transform: capitalize
+  .storeBannerImage
+    width: 100%
+    background-size: 100% 100%
+    height: 300px
+  .storeHeadingRating
+    padding: 10px
+    .singleStoreHeading
+      font-size: 24px
+      text-transform: capitalize
+  .userInteractionNav
+    margin-bottom: 20px
+    .userInteractionContainers
+      font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif
+      margin: 0 10px
+      background: #FFF
+      border: 1px solid #e7e7e7
+      color: #7B8489
+      border-radius: 5px
+      font-weight: 500
+.chipType
+  display: block
+  padding: 6px 9px
+  cursor: pointer
+  transition: background .1s ease
+  &:hover
+    background: #eee
+  .chipText
+    margin-left: 7px
+    font-size: 14px
+    
+
+
+.addressContentText
+  @extend .capital-normal-text
+  margin-top: 25px
+  margin-left: 15px
+.storeReviewsBrief
+  width: 100%
+  .storeReviewsBriefIcons
+    .iconContainer
+      text-align: center
+      margin: 5px
+      padding: 15px
+      width: 100%
+      background-color: white
+      transition: all 1s 
+      cursor: pointer
+      &:hover
+        color: red
+      .iconClass
+        font-size: 32px
+        text-align: center
+.storePageStatsNav
+  .statsContent
+    padding: 10px
+    cursor: pointer
+    .statsContentText
+      margin: 2px 0
+      
+      span
+        margin: 5px
+  md-divider
+    border-right-width: 3px
+
+
+.storeSuggestionsContainer
+  margin-top: 20px
+  background-color: white
+  padding: 10px
+  border: 1px solid #e1e8ed
+  border-radius: 5px
+  .storeSuggestionHeader
+    margin-top: 5px
+    margin-bottom: 10px
+  .singleStoreSuggestion
+    width: 100%
+    margin-bottom: 10px
+    .suggestedStoreImage
+      width: 100%
+      position: relative
+      &:after 
+        content: ""
+        display: block
+        padding-bottom: 75%
+      img
+        width: 100%
+        height: 100%
+        position: absolute
+        border: 1px solid #e1e8ed
+        border-radius: 3px  
+        
+    .suggestedStoreInfo
+      padding: 5px
+      word-wrap: break-word
+      a
+        text-decoration: none
+      .suggestedStoreName
+        text-transform: capitalize
+        margin-top: 0px
+        margin-bottom: 0
+      .suggestedStoreAddress
+        margin-top: 2px
+        font-size: 10px
+        margin-bottom: 0
+        text-transform: capitalize
+      .suggestedStoreCategories
+        margin-top: 2px
+        font-size: 10px
+        margin-bottom: 0
+        text-transform: capitalize
+

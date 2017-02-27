@@ -1,0 +1,16 @@
+<ion-view cache-view="false">
+        <ion-content>
+                <div class="storesCategoryCollection">
+                        
+                                <div layout="row" layout-wrap>
+                                        <md-button class="md-raised md-primary" ng-click="sccc.showFilterDialog()">Filter</md-button>
+                                        <div flex="100">
+                                                <h3>{{sccc.storesSearchHeader.split('-').join(" ")}}</h3>
+                                                <stores-list param-data="sccc.paramData">
+                                                </stores-list>
+                                        </div>
+                                </div>
+                        
+                </div>
+        </ion-content>
+</ion-view>

@@ -1,0 +1,9 @@
+<div class="jk-carousel" >
+ <div class="slides-container" layout="row" >   
+  <div      ng-repeat="slideItem in ctrl.cloneData"      class="slide"    >     
+   <div ng-include="ctrl.itemTemplateUrl" ></div>   
+    </div>  </div>  
+    <md-button class="md-icon-button left-arrow-button" >    
+    <md-icon ng-click="ctrl.navigateLeft()" >chevron_left</md-icon>  </md-button>  
+    <md-button class="md-icon-button right-arrow-button" >    
+    <md-icon ng-click="ctrl.navigateRight()" >chevron_right</md-icon>  </md-button>  </div>

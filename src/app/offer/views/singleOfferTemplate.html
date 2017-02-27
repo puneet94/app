@@ -1,0 +1,36 @@
+<div class="singleofferContainer">
+        <div class="offerImageContainer">
+                <div class="suggestedStoreImage">
+                        <img ng-src="{{offer.bannerImage}}" alt="" />
+                </div>
+                <div class="offerImageDate" md-whiteframe="5">
+                        {{offer.startDate | date : 'dd MMM'}}
+                </div>
+                <div class="adminOfferTag" ng-if="isAdminOffer">
+                        <a ng-href="#/admin/adminEditOffer/{{offer.store._id}}/{{offer._id}}">Edit</a>
+                </div>
+        </div>
+        <div class="offerDetailsContainer" >
+                <div layout="column" flex layout-align="space-between none" style="height:100%">
+                    
+                
+                        <div>
+                                <h3 class="offerDetailsHeader">{{offer.tagline}}</h3>
+                        </div>
+                        <div class="offerCategoryContainer">
+                            <span ng-repeat="category in offer.category" class="customChip">{{category}}</span>
+                        </div>
+                        <div class="offerLocation">
+                                <span class="offerAddressEntity" >{{offer.address.area+" ,"+offer.address.locality+", "+offer.address.state}}</span>
+                        </div>
+                        <div class="offerMore">
+                                <a ng-href="#/offer/{{offer._id}}" class="offerViewMore">
+                                        
+                                                View More
+                                        
+                                </a>
+                        </div>
+                </div>
+        </div>
+        <div style="clear:both;"></div>
+</div>

@@ -1,0 +1,19 @@
+<div ng-controller="UserAccountSettingsController as uasc">
+		<h3>My Stores</h3>
+		<ul class="arrowBoxList">
+        
+        <li class="arrowBoxListEntity" ng-repeat="userStore in uasc.userStoresList " aria-label="User store " ng-click="uasc.getAdminStore(userStore._id) ">
+             <span>
+ 				{{userStore.name}}-{{userStore.address.locality}}
+ 			</span>  <span class="iconClass">
+ 				<i class="fa fa-angle-right" aria-hidden="true"></i>
+ 			</span>  </li>
+         </ul>
+		<div ng-if="uasc.authCheck">
+			<h3>Change Password</h3>
+		<change-password></change-password>	
+		</div>
+		
+
+		<md-button class="md-raised md-primary" ng-click="uasc.authLogout()">Logout	</md-button>
+</div>

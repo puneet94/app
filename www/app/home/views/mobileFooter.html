@@ -1,0 +1,74 @@
+<div class="" ng-controller="MobileFooterController as mfc">
+        <div layout="row" layout-align="space-around center" class="mobileFooterContainer">
+                <div class="mobileFooterEntity">
+                        <a ng-href="#/home">
+                                <div class="mobileFooterEntityIcon">
+                                        <span>
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </span>
+                                </div>
+                                <div class="mobileFooterEntityText">
+                                        Home
+                                </div>
+                        </a>
+                </div>
+                <div class="mobileFooterEntity">
+                        <div ng-if="!mfc.authCheck" ng-click="mfc.showAuthenticationDialog($event)">
+                                <div class="mobileFooterEntityIcon">
+                                        <span>
+                                            
+                                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>             
+                                        </span>
+                                </div>
+                                <div class="mobileFooterEntityText">
+                                        Me
+                                </div>
+                        </div>
+                        <a ng-href='#/userMePage' ng-if="mfc.authCheck">
+                                <div class="mobileFooterEntityIcon">
+                                        <span>
+                                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>             
+                                        </span>
+                                </div>
+                                <div class="mobileFooterEntityText">
+                                        Me
+                                </div>
+                        </a>
+                </div>
+                <div class="mobileFooterEntity">
+                        <a ng-href="#/userMobileFeed">
+                                <div class="mobileFooterEntityIcon">
+                                        <span style="font-size:18px;">
+                    &#9977;
+                    
+                </span>
+                                </div>
+                                <div class="mobileFooterEntityText">
+                                        Feed
+                                </div>
+                        </a>
+                </div>
+                <div class="mobileFooterEntity">
+                        <div ng-if="!mfc.authCheck" ng-click="mfc.showAuthenticationDialog($event)">
+                                <div class="mobileFooterEntityIcon">
+                                        <span>
+                                            <i class="fa fa-address-book" aria-hidden="true"></i>                    
+                                        </span>
+                                </div>
+                                <div class="mobileFooterEntityText">
+                                        Login
+                                </div>
+                        </div>
+                        <a ng-href='#/chatRooms' ng-if="mfc.authCheck">
+                                <div class="mobileFooterEntityIcon">
+                                        <span>
+                                            <i class="fa fa-weixin" aria-hidden="true"></i>
+                                        </span>
+                                </div>
+                                <div class="mobileFooterEntityText">
+                                        Chat
+                                </div>
+                        </a>
+                </div>
+        </div>
+</div>

@@ -1,0 +1,51 @@
+<div ng-controller="ProductReviewListController as prl" class="reviewListSection">
+  <h1 class="reviewHeadingText" >Reviews</h1>
+  <div  md-whiteframe="1"  ng-repeat-start="review in prl.reviewList track by review._id">
+      <single-review-directive review-params="prl.reviewParams" review="review"></single-review-directive>
+      <!--<div flex="25" flex-xs="100" flex-sm="100" class="userSection">
+        <div layout="row" class="userProfile">
+          <div class="userImgSection">
+            <div class="userImg" style='background-image:url("{{review.user.picture}}")'></div>
+          </div>
+          <div class="userStats">
+            <ul>
+              <li class="userName"><span  ng-click="prl.getUserPage(review.user._id)">{{ ::review.user.displayName }}</span></li>
+              <li class="userLocation">{{ ::review.user.city }}</li>
+              <li class="userFollowers">{{ ::review.user.followers.length||0 }} Followers</li>
+              <li class="userReviews">{{ ::review.user.reviews.length }} Reviews
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div flex="70" flex-xs="100" flex-sm="100" class="contentSection">
+        <div class="ratingSection">
+          <span ng-repeat="i in prl.getRating(review)">
+            <i aria-hidden="true" class="fa fa-star"></i>
+          </span>
+        </div>
+        <div class="reviewContent">
+          {{::review.description }}
+        </div>
+        <div class="contentRatingSection">
+          <div class="reviewStats"><span>{{ ::review.upvotes.length ||0 }} <i class="fa fa-heart-o" aria-hidden="true"></i></span></div>
+        </div>
+
+        <div class="userReviewUpvoteSection" ng-if="prl.authCheck">
+          <like-directive
+            up-fn="prl.submitUserReviewUpvote(review)"
+            down-fn="prl.deleteUserReviewUpvote(review)"
+            upv-chk="prl.userReviewUpvoted(review)"
+            small-loading="prl.smallLoadingModel[review._id]">
+          </like-directive>
+
+
+
+        </div>
+      </div>-->
+
+  </div>
+  <div ng-repeat-end=""></div>
+
+
+</div>

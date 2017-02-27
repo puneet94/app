@@ -1,0 +1,17 @@
+<div class="" ng-controller="UserFollowersController as ufc">
+	<div layout-xs="column" layout-sm="column" layout="row" layout-wrap="layout-wrap" class="followersList">
+	    <div layout="row" layout-fill="layout-fill" layout-wrap="layout-wrap" flex-xs="100" flex-sm="100" flex="50" class="followerContainer" ng-repeat = "follower in ufc.followersList">
+	      <div flex="30" class="followerImage" afkl-lazy-image={{::follower.picture}}>
+	      	
+	      </div>
+	      <div layout="column" layout-align="center start" flex="50" class="followerInfo">
+	        <div class="followerName"><span ng-click=ufc.getUserPage(follower._id)>{{::follower.displayName}}</span></div>
+	        <div class="followerLength"><span>{{follower.followers.length}} Followers</span></div>
+	      </div>
+	      <div flex="20" ng-if="ufc.authCheck" layout="column" layout-align="center end" class="followUser">
+	        <button class="md-raised md-primary followUserButton" ng-click="ufc.deleteUserFollow(follower._id)" ng-if="ufc.currentUserFollowed(follower._id)">followed</button>
+	        <button class="md-raised  followUserButton" ng-click="ufc.submitUserFollow(follower._id)" ng-if="!ufc.currentUserFollowed(follower._id)">follow</button>
+	      </div>
+	    </div>
+   	</div>
+</div>

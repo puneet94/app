@@ -1,0 +1,61 @@
+
+<div class="eventPage">
+        <div class="eventBannerSection">
+                <div class="eventBannerImage" flex>
+                        <img ng-src="{{opc.eventData.bannerImage}}" alt="" />
+                </div>
+        </div>
+        <br>
+        <md-button class="md-raised md-primary" ng-click="opc.shareFacebook()">Facebook</md-button>
+        <a href="#" socialshare socialshare-provider="facebook" socialshare-url="http://720kb.net">
+Share me
+</a>
+        <div layout="row" layout-sm="column" layout-xs = "column">
+                <div flex="60"  flex-sm="100" flex-xs="100" class="eventDetailsSection">
+                        <div class="eventTitle">
+                                <h2> {{opc.eventData.tagline}} </h2>
+                        </div>
+                        <div class="eventDescription">
+                                <p>
+                                        {{opc.eventData.description}}
+                                </p>
+                        </div>
+                        <div class="eventDetailsContent">
+                                <div layout="column">
+                                        <div layout="row" class="eventDetailsEntity">
+                                                <div flex="30" flex-sm="100" flex-xs="100" class="eventDetailsEntityLabel">Start Date</div>
+                                                <div flex="70" flex-sm="100" flex-xs="100">{{ opc.eventData.startDate | date: 'd MMM yyyy'}}</div>
+                                        </div>
+                                        <div layout="row" class="eventDetailsEntity">
+                                                <div flex="30" flex-sm="100" flex-xs="100" class="eventDetailsEntityLabel">End Date</div>
+                                                <div flex="70" flex-sm="100" flex-xs="100">{{ opc.eventData.endDate | date: 'd MMM yyyy'}}</div>
+                                        </div>
+                                        <div layout="row" class="eventDetailsEntity">
+                                                <div flex="30" flex-sm="100" flex-xs="100" class="eventDetailsEntityLabel">Venue</div>
+                                                <div flex="70" flex-sm="100" flex-xs="100">{{ opc.eventData.address.area+", "+opc.eventData.address.locality+", "+opc.eventData.address.city}}</div>
+                                        </div>
+                                        <div layout="row" class="eventDetailsEntity">
+                                                <div flex="30" flex-sm="100" flex-xs="100" class="eventDetailsEntityLabel">Category</div>
+                                                <div flex="70" flex-sm="100" flex-xs="100">{{ opc.eventData.category.join(", ")}}</div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="eventMapContainer">
+                                <div class="mapContainer">
+
+                                        <ng-map zoom='15' center="{{opc.pos}}" scrollwheel="false">
+                                                <marker position="{{opc.pos}}" animation="Animation.BOUNCE">
+                                                </marker>
+                                        </ng-map>
+                                </div>
+                        </div>
+                </div>
+                <div flex="30"  flex-sm="100" flex-xs="100" class="eventSuggestionSection">
+                        
+                        <div class="moreEventSection">
+                                <h3 class="eventSuggestionHeader">More Events</h3>
+                                <event-suggestion-list event-limit="6" event-city="opc.eventData.address.city"> </event-suggestion-list>
+                        </div>
+                </div>
+        </div>
+</div>

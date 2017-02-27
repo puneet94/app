@@ -1,0 +1,37 @@
+<ion-view hide-nav-bar="true">
+    <ion-header-bar align-title="center" class="bar-positive">
+        <h1 class="title">Store, Product or Brand</h1>
+        <div class="buttons">
+            <button class="button" ng-click="espc.goBackPage()">Close</button>
+      </div>
+        
+    </ion-header-bar>
+    <div class="bar bar-subheader item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-bag placeholder-icon"></i>
+    <input type="text" ng-model="espc.entitySearchModel" ng-change="espc.entityTextChange()">
+  </label>
+  <button class="button button-assertive">
+    Clear
+  </button>
+</div>
+    
+    <ion-content class="has-header has-subheader">
+    
+        
+        <ion-list>
+            <ion-item collection-repeat="entity in espc.entitySearchItems" ng-click="espc.itemSelected(entity)">
+                 
+                <div class="searchItemContainer" >
+                                                        <div class="searchItemTitleText">
+                                                            {{entity.userSearchString.split("#&amp;#")[0]}}
+                                                        </div>
+                                                        <div class="searchItemCategoryText">
+                                                            {{entity.userSearchString.split("#&amp;#")[1]}}
+                                                        </div>
+                                                </div>
+                 
+            </ion-item>
+        </ion-list>
+    </ion-content>    
+</ion-view>

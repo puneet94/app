@@ -1,0 +1,48 @@
+<div ng-controller="StoreStatisticsController as sstc" layout="column" ng-cloak="">
+
+      <div class="customTabsContainer">
+                <ul class="tabsList">
+                    <li ng-click="sstc.setTab(1)" ng-class="{customTabActive:sstc.isSet(1)}">Store Info</li>
+                    <li ng-click="sstc.setTab(2)" ng-class="{customTabActive:sstc.isSet(2)}">Reviews</li>
+                    <li ng-click="sstc.setTab(3)" ng-class="{customTabActive:sstc.isSet(3)}">Products</li>
+                    <li ng-click="sstc.setTab(4)" ng-class="{customTabActive:sstc.isSet(4)}">Offers</li>
+                </ul>
+            </div>
+            <div ng-show="sstc.isSet(1)">
+                <div class="animated slideInLeft" ng-include="'app/admin/views/adminEditStore.html'" flex>
+                  
+                </div>
+            </div>
+
+            <div ng-show="sstc.isSet(2)">
+                <div class="animated slideInLeft">
+                    <div ng-include="'app/reviews/views/storeReviewList.html'"></div>
+                
+                </div>
+                
+            </div>
+
+            <div ng-show="sstc.isSet(3)">
+                <div  class="animated slideInLeft" >
+                    <div ng-include="'app/product/views/productsStoreCollection.html'">
+                        
+                    </div>
+                    <div ng-include="'app/admin/views/adminCreateProduct.html'">
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div ng-show="sstc.isSet(4)">
+                <div class="animated slideInLeft" >
+                    <div ng-include="'app/admin/views/adminOffersCollection.html'">
+                        
+                    </div>
+                    <div ng-include="'app/admin/views/adminCreateOffer.html'">
+                        
+                    </div>
+                </div>
+                
+            </div>
+ 
+</div>

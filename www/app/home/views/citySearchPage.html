@@ -1,0 +1,27 @@
+<ion-view hide-nav-bar="true">
+    <ion-header-bar align-title="center" class="bar-positive">
+        <h1 class="title">Location</h1>
+        <div class="buttons">
+            <button class="button" ng-click="cspc.goBackPage()">Close</button>
+      </div>
+        
+    </ion-header-bar>
+    <div class="bar bar-subheader item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="text" ng-model="cspc.citySearchModel">
+  </label>
+  <button class="button button-assertive">
+    Clear
+  </button>
+</div>
+    
+    <ion-content class="has-header has-subheader">
+        
+        <ion-list>
+            <ion-item collection-repeat="city in cspc.citySearchItems|filter:cspc.citySearchModel" ng-click="cspc.itemSelected(city)">
+                 {{city}}
+            </ion-item>
+        </ion-list>
+    </ion-content>    
+</ion-view>

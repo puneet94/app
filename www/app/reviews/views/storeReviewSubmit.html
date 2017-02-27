@@ -1,0 +1,27 @@
+<div class="" ng-controller="ReviewSubmitController as rsv">
+  <form class="reviewSubmitForm"  name="reviewSubmitForm">
+    <md-content layout="row" class="reviewSubmitFormContent">
+      <div class="userProfileReviewImg" flex="5" flex-xs="10" flex-sm="10">
+        <img ng-src="{{rsv.user.picture}}" class="md-avatar" alt="{{rsv.user.displayName}}">
+      </div>
+      <div class="" layout="column" flex="grow" flex="70" flex-xs="60" flex-sm="60" flex-offset="5">
+
+        <label>My Review</label>
+        <div class="userRatingSection">
+          <fieldset class="rating">
+            <input ng-repeat-start="i in [1,2,3,4,5]" id="star{{i}}" type="radio" name="rating" value="{{i}}" ng-click="rsv.ratingClick($event)"/>
+            <label ng-repeat-end="" for="star{{i}}" title="Awesome - 5 stars" class="full"></label>
+          </fieldset>
+        </div>
+        <textarea ng-model="rsv.review.description" rows="10" name="review" required="true"></textarea>
+
+      </div>
+
+
+    </md-content>
+    <div >
+      <md-button ng-click="rsv.submitReview()" class="md-raised md-primary" >Submit</md-button>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,40 @@
+<div class="storeDetailsContainer">
+  <div class="" layout="row" layout-align="space-between center" layout-md="column" layout-xs="column">
+    <div class="phoneContainer infoContainer">
+      <h4 class="phoneHeader contentHeader">Phone Number</h4>
+      <div class="phoneText  contentText">
+        <p>{{::ssc.storeData.phone || 'NA'}}</p>
+      </div>
+    </div>
+    <div class="timingsContainer infoContainer">
+      <h4 class="timingsHeader contentHeader">Opening Hours</h4>
+      <div class="phoneText contentText">
+        <p>{{::ssc.storeData.openHours|| 'NA'+" - "}}
+        {{::ssc.storeData.closeHours|| 'NA'}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="" layout="row" layout-align="space-between center">
+    <div class="categoryContainer infoContainer">
+      <h4 class="categoryHeader contentHeader">Category</h4>
+      <div class="categoryText contentText">
+        <p>{{::ssc.storeData.category.join(", ") }}</p>
+      </div>
+    </div>
+    <div class="addressContainer infoContainer">
+      <h4 class="addressHeader contentHeader">Address</h4>
+      <div class="addressText contentText">
+        <p>{{::ssc.storeData.address.locality}}</p>
+        <p>{{::ssc.storeData.address.area}}</p>
+        <p>
+          {{ssc.storeData.address.zone?ssc.storeData.address.zone+", " : " "}}{{::ssc.storeData.address.city}}  
+        </p>
+
+        <a class="moreLocationsLink" ng-href="#/store/storesCollection/storeName/{{ssc.storeData.name}}/{{ssc.storeData.address.city}}">More Location</a>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
