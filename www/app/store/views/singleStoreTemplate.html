@@ -1,48 +1,35 @@
-<md-card>
-        <md-card-title layout="row" layout-align="space-between start">
-                <md-card-title-media class="singleStoreMedia">
-                        <div ng-click="getSingleStore(store)" class="md-media-md card-media">
-                                <div class="storeCardImage" afkl-lazy-image={{store.bannerImage}}>
-                                </div>
-                        </div>
-                </md-card-title-media>
-                <md-card-title-text class="singleStoreDetails">
-                        <h1 class="storeNameHeader">
-	<a ui-sref="tabs.singleStorePage({storeId:store._id})" ui-sref-opts="{reload: true}">
-	       <span class="storeNameHeading">{{store.name}}<span>
-					</a>
-						
-                        </h1>
-                        <div class="storeAddressDetails">
-                                <div>
-                                        <span>{{::store.address.locality}}</span>
-                                        <span>{{::store.address.area}}</span>
-                                        <span>{{::store.address.city}}</span>
-                                        <span>{{::store.address.state}}</span>
-                                </div>
-                                <div>
-                                </div>
-                        </div>
-                        <div class="storeListCategories">
-                                <span class="storeListCategory" ng-repeat="category in store.category">{{::category}}	
-	       </span>
-                        </div>
-                        <div class="storeListSubCategories">
-                                <span class="storeListSubCategory" ng-repeat="subCategory in store.subCategory">{{::subCategory}}
-	       </span>
-                        </div>
-                </md-card-title-text>
-        </md-card-title>
-        <md-divider></md-divider>
-        <md-card-footer>
-                <div class="storeCardFooter" layout="row" layout-align="space-between start">
-                        <div layout="row">
-                                <span> {{::store.visitsCount}} Visits</span>
-                        </div>
-                        <div layout="row" style="cursor:pointer;">
-                                <span>{{::store.reviewsCount}} Reviews </span>
-                                <span> {{::store.productsCount}} Products</span>
-                        </div>
-                </div>
-        </md-card-footer>
-</md-card>
+<div class="card singleStoreTemplate">
+        	<div class="item item-thumbnail-left item-text-wrap" >
+	   	
+	   	<img ng-src="{{store.bannerImage}}" />
+	             <div class="storeRating">
+	             	{{store.rating}}
+	             </div>
+	             <h2 class="storeHeading"> {{store.name}}</h2>
+	             
+	             <div class="storeAddress">
+	                        <span>{{::store.address.locality+", "}}</span>
+	                        <span>{{::store.address.area+", "}}</span>
+	                        <span>{{::store.address.city}}</span>
+	                        
+	             </div>
+	             <div class="storeListCategories">
+	             	<span class="storeCategory" ng-repeat="category in store.category">{{::category}}	
+		       	</span>
+	             </div>
+	             <div class="storeListSubCategories">
+	             	<span class="storeSubCategory" ng-repeat="subCategory in store.subCategory">{{::subCategory}}
+		       	</span>
+	             </div>
+	             
+        	</div>
+        	
+        	<div class="item item-divider">
+        		<div class="row">
+        			<div class="storeStats col-33"> {{::store.visitsCount}} Visits</div>
+			<div class="storeStats col-33"> {{::store.productsCount}} Products</div>
+			<div class="storeStats col-33">{{::store.reviewsCount}} Reviews </div>	
+        		</div>
+    		
+  	</div>		
+</div>

@@ -1,17 +1,10 @@
-<ion-view cache-view="false">
+<ion-view >
         <ion-content>
-                 
                 <div class="storesLocationCollection">
-                        <main>
-                                <h1 class="collectionHeader">{{slcc.storesSearchHeader.split('-').join(" ")}}</h1>
-                                <div layout="row" layout-wrap>
-                                        <md-button class="md-raised md-primary" ng-click="slcc.showFilterDialog()">Filter</md-button>
-                                        <div flex="100">
-                                                <stores-list param-data="slcc.paramData">
-                                                </stores-list>
-                                        </div>
-                                </div>
-                        </main>
+                        <h1 class="collectionHeader">{{slcc.storesSearchHeader.split('-').join(" ")}}</h1>
+                                <md-button class="md-raised md-primary" ng-click="slcc.showFilterDialog()">Filter</md-button>
+                                <stores-list param-data="slcc.paramData">
+                                </stores-list>
                 </div>
         </ion-content>
 </ion-view>

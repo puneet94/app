@@ -2,9 +2,9 @@
 	'use strict';
 	angular.module('app.admin')
 
-	.controller('CreateOfferController', ['$scope', 'Upload', '$timeout', 'baseUrlService', '$mdDialog','$location','adminOfferService','$stateParams',CreateOfferController]);
+	.controller('CreateOfferController', ['$scope', 'Upload', '$timeout', 'baseUrlService', '$mdDialog', '$location', 'adminOfferService', '$stateParams', '$state', '$cordovaGeolocation', CreateOfferController]);
 
-	function CreateOfferController($scope, Upload, $timeout, baseUrlService,$mdDialog,$location,adminOfferService,$stateParams) {
+	function CreateOfferController($scope, Upload, $timeout, baseUrlService, $mdDialog, $location, adminOfferService, $stateParams, $state, $cordovaGeolocation) {
 		var coc = this;
 		coc.offerForm = {};
 		coc.offerForm.offerImages = [];
@@ -65,7 +65,7 @@
 
 		function createOffer() {
 			coc.offerForm.bannerImage = coc.offerForm.bannerImage || coc.offerForm.offerImages[0];
-			adminOfferService.createOffer($stateParams.storeId,coc.offerForm)
+			adminOfferService.createOffer($stateParams.storeId, coc.offerForm)
 				.then(function(response) {
 					console.log(response.data._id);
 					userData.setUser();
@@ -87,8 +87,111 @@
 
 
 		function activate() {
+			//google.maps.event.addDomListener(window, 'load', googleMap);
+
+
+			/*$timeout(function() {
+				googleMap();
+			});*/
+			loadGoogleMaps();
 
 		}
+
+		function loadGoogleMaps() {
+
+			window.mapInit = function(){
+      				googleMap();
+    			};
+			var script = document.createElement("script");
+			script.type = "text/javascript";
+			script.id = "googleMaps";
+
+			var mapsTag =  document.getElementById('googleMaps');
+			if(mapsTag){
+				
+				mapsTag.parentElement.removeChild(mapsTag);	
+			}
+			var apiKey = 'AIzaSyDGTEBHgF0pPjYvmmrlHYLUyksDW70lNWU';
+			
+			script.src = 'https://maps.google.com/maps/api/js?key=' + apiKey + '&ibraries=places&callback=mapInit';	
+			document.body.appendChild(script);
+			
+			
+			
+			
+
+			
+		}
+		$scope.$on('gmPlacesAutocomplete::placeChanged', function(){
+
+			alert("hiyyingfd");
+     			 var location = coc.autocomplete.getPlace().geometry.location;
+      			$scope.lat = location.lat();
+      			$scope.lng = location.lng();
+      			$scope.$apply();
+
+      			if (marker) {
+						marker.setPosition([$scope.lat,$scope.lang]);
+						marker.setMap($scope.map);
+					} else {
+
+						marker = new google.maps.Marker({
+							position: [$scope.lat,$scope.lang],
+							map: $scope.map
+						});
+					}
+  		});
+		function googleMap() {
+			var options = { timeout: 10000, enableHighAccuracy: false };
+			var marker;
+			$cordovaGeolocation.getCurrentPosition(options).then(function(position) {
+				var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+				var mapOptions = {
+					center: latLng,
+					zoom: 15,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+
+				$scope.map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+				google.maps.event.addListenerOnce($scope.map, 'idle', function() {
+
+					marker = new google.maps.Marker({
+						map: $scope.map,
+						animation: google.maps.Animation.DROP,
+						position: latLng
+					});
+
+					
+
+				});
+
+				google.maps.event.addListener($scope.map, 'click', function(event) {
+					
+					alert(event.latLng.lat());
+					
+
+					//console.log(marker);
+					if (marker) {
+						marker.setPosition(event.latLng);
+						marker.setMap($scope.map);
+					} else {
+
+						marker = new google.maps.Marker({
+							position: event.latLng,
+							map: $scope.map
+						});
+					}
+				});
+
+			}, function(error) {
+				alert("error");
+				console.log("error is here");
+				console.log(error);
+			});
+		}
+
+
+
 
 	}
 })(window.angular);

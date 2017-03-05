@@ -70,13 +70,17 @@
             
             function entityTextChange() {
 
-            
+            if(espc.entitySearchModel){
                 searchService.getAjaxSearches(espc.city, espc.entitySearchModel)
                     .then(function(resource) {
                         espc.entitySearchItems = [];
                         espc.entitySearchItems = resource.data;
                         
                     });
+            }
+            else{
+                setSearches();
+            }
             
             }
             function setSearches(){

@@ -1,21 +1,3 @@
-.capital-heading-text {
-  text-transform: capitalize;
-  font-size: 24px;
-  font-weight: 600;
-  color: #795548; }
-
-.capital-sub-heading-text {
-  text-transform: capitalize;
-  font-size: 16px;
-  font-weight: 600;
-  color: #795548; }
-
-.capital-normal-text {
-  text-transform: capitalize;
-  font-size: 14px;
-  font-weight: 400;
-  color: #795548; }
-
 .adminStoreBannerImage {
   height: 300px;
   width: 100%;
@@ -109,92 +91,28 @@
     display: inline;
     margin: 2px; }
 
-.authenticationModalContainer {
-  padding: 24px; }
+.capital-heading-text {
+  text-transform: capitalize;
+  font-size: 24px;
+  font-weight: 600;
+  color: #795548; }
 
-.authModalFormContainer {
-  max-width: 100%;
-  width: 480px;
-  box-sizing: border-box;
-  margin-top: 10px; }
+.capital-sub-heading-text {
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 600;
+  color: #795548; }
 
-.autheticateFormInputContainer {
-  position: relative;
-  margin-bottom: 15px; }
-  .autheticateFormInputContainer .iconContainer {
-    position: absolute;
-    right: 5px;
-    top: 10px;
-    width: 30px;
-    text-align: center; }
-    .autheticateFormInputContainer .iconContainer span {
-      font-size: 24px;
-      color: teal; }
-  .autheticateFormInputContainer input {
-    height: 50px;
-    font-size: 16px;
-    width: 100%;
-    font-family: Roboto;
-    font-weight: 500;
-    padding-left: 10px;
-    padding-right: 10px;
-    transition: border-color 0.2s;
-    border: 1px solid #aaa;
-    border-radius: 2px;
-    background-color: #fff;
-    color: #484848;
-    box-sizing: border-box;
-    display: block; }
-
-.facebookAuthenticateButton {
-  border-color: #3B5998;
-  background-color: #3B5998;
-  color: #fff;
-  padding: 20px;
-  margin-bottom: 0px;
-  box-sizing: border-box; }
-  .facebookAuthenticateButton .text-container {
-    margin-left: 30%; }
-
-.loginSeparator {
-  position: relative;
-  text-align: center;
-  margin-top: 10px;
-  height: 20px;
-  color: rgba(0, 0, 0, 0.5); }
-  .loginSeparator .separatorLine {
-    position: absolute;
-    top: 45%;
-    height: 1.5px;
-    background-color: rgba(0, 0, 0, 0.2);
-    width: 100%;
-    display: block; }
-  .loginSeparator .separatorText {
-    position: absolute;
-    left: 45%;
-    display: block;
-    padding: 10px;
-    background-color: white;
-    padding-top: 0; }
-
-.authModalText {
-  font-size: 18px;
-  color: teal;
-  font-family: "Lato"; }
-
-.authModalButton {
-  font-family: "Lato";
-  padding: 10px 18px;
-  color: teal;
-  border: 1px solid teal;
-  border-radius: 3px; }
-
+.capital-normal-text {
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 400;
+  color: #795548; }
 
 .chatBoxPage {
   position: relative;
-  padding: 10px;
-  background-color: white;
-  margin: 5px 5px; }
+  padding: 0px 10px;
+  background-color: white; }
   .chatBoxPage .chatBoxTextArea {
     border: 1px solid black;
     width: 80%; }
@@ -285,6 +203,87 @@
 @media (max-width: 600px) {
   .mobileChatRoomList {
     /*margin-top: 60px*/ } }
+
+.authenticationModalContainer {
+  padding: 24px; }
+
+.authModalFormContainer {
+  max-width: 100%;
+  width: 480px;
+  box-sizing: border-box;
+  margin-top: 10px; }
+
+.autheticateFormInputContainer {
+  position: relative;
+  margin-bottom: 15px; }
+  .autheticateFormInputContainer .iconContainer {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    width: 30px;
+    text-align: center; }
+    .autheticateFormInputContainer .iconContainer span {
+      font-size: 24px;
+      color: teal; }
+  .autheticateFormInputContainer input {
+    height: 50px;
+    font-size: 16px;
+    width: 100%;
+    font-family: Roboto;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: border-color 0.2s;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    background-color: #fff;
+    color: #484848;
+    box-sizing: border-box;
+    display: block; }
+
+.facebookAuthenticateButton {
+  border-color: #3B5998;
+  background-color: #3B5998;
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 0px;
+  box-sizing: border-box; }
+  .facebookAuthenticateButton .text-container {
+    margin-left: 30%; }
+
+.loginSeparator {
+  position: relative;
+  text-align: center;
+  margin-top: 10px;
+  height: 20px;
+  color: rgba(0, 0, 0, 0.5); }
+  .loginSeparator .separatorLine {
+    position: absolute;
+    top: 45%;
+    height: 1.5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    display: block; }
+  .loginSeparator .separatorText {
+    position: absolute;
+    left: 45%;
+    display: block;
+    padding: 10px;
+    background-color: white;
+    padding-top: 0; }
+
+.authModalText {
+  font-size: 18px;
+  color: teal;
+  font-family: "Lato"; }
+
+.authModalButton {
+  font-family: "Lato";
+  padding: 10px 18px;
+  color: teal;
+  border: 1px solid teal;
+  border-radius: 3px; }
+
 
 textarea {
   border: 1px solid black; }
@@ -1059,10 +1058,9 @@ a {
 
 @media (max-width: 600px) {
   .singleofferContainer {
-    float: left;
     display: block;
     width: 100%;
-    min-height: 400px; }
+    height: 200px; }
     .singleofferContainer .offerImageContainer {
       display: block;
       float: left;
@@ -1650,6 +1648,59 @@ div:focus, span:focus, li:focus {
         margin-bottom: 0;
         text-transform: capitalize; }
 
+.singleStoreTemplate .storeRating {
+  float: right;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+  height: 25px;
+  line-height: 23px;
+  text-align: center;
+  width: 36px;
+  margin-bottom: 5px;
+  background: #57d1f6;
+  border-color: #57d1f6;
+  clear: both; }
+
+.singleStoreTemplate .storeAddress, .singleStoreTemplate .storeListCategories, .singleStoreTemplate .storeListSubCategories, .singleStoreTemplate .storeHeading {
+  text-transform: capitalize; }
+
+.singleStoreTemplate .storeHeading {
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: 500; }
+
+.singleStoreTemplate .storeAddress {
+  font-size: 14px;
+  margin-bottom: 5px; }
+
+.singleStoreTemplate .storeListCategories {
+  font-size: 12px;
+  font-weight: 500; }
+
+.singleStoreTemplate .storeCategory {
+  border: 1px solid blue;
+  padding: 2px 5px;
+  border-radius: 2px;
+  background-color: white;
+  color: blue;
+  margin-right: 2px; }
+
+.singleStoreTemplate .storeListSubCategories {
+  margin-top: 5px;
+  font-size: 12px; }
+
+.singleStoreTemplate .storeSubCategory {
+  border-radius: 2px;
+  padding: 2px 5px;
+  background-color: red;
+  color: white;
+  margin: 2px; }
+
+.singleStoreTemplate .storeStats {
+  text-align: center;
+  font-size: 14px; }
+
 .storeDetailsContainer {
   padding: 10px;
   margin-top: 10px;
@@ -1682,28 +1733,6 @@ div:focus, span:focus, li:focus {
   font-weight: 400;
   color: #795548; }
 
-.storeListCategories {
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: capitalize; }
-  .storeListCategories .storeListCategory {
-    border-radius: 2px;
-    padding: 2px 5px;
-    background-color: blue;
-    color: white;
-    margin: 2px; }
-
-.storeListSubCategories {
-  margin-top: 5px;
-  font-size: 12px;
-  text-transform: capitalize; }
-  .storeListSubCategories .storeListSubCategory {
-    border-radius: 2px;
-    padding: 2px 5px;
-    background-color: green;
-    color: white;
-    margin: 2px; }
-
 .storeCardImage {
   background-size: cover;
   height: 100px; }
@@ -1721,15 +1750,6 @@ div:focus, span:focus, li:focus {
   font-weight: 800; }
   .storeCardFooter span {
     margin: 2px; }
-
-.storeNameHeading {
-  text-transform: capitalize;
-  font-weight: 700;
-  cursor: pointer; }
-  .storeNameHeading span {
-    color: red;
-    font-size: 12px;
-    padding-left: 5px; }
 
 .loadMoreButton {
   width: 100%;

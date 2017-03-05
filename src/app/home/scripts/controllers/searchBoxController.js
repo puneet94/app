@@ -24,14 +24,14 @@
         hm.userSearchTextChange = userSearchTextChange;
         hm.openSearchBox = openSearchBox;
         
-        $scope.$watch(function () {
+        /*$scope.$watch(function () {
             return hm.userSearchSelectedItem;
             },function(value){
                 
             if(value){
                 userSearchItemChange(value);                
             }
-        });
+        });*/
         
 
         function openSearchBox() {
@@ -89,6 +89,7 @@
             }
         }
         //md-search-text-change="sbc.searchTextChange(sbc.searchText)"
+
         function userSearchTextChange(city, userSearchText) {
 
             if (userSearchText.length >= 1) {

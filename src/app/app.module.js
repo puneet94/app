@@ -4,7 +4,7 @@
 
 	var app = angular.module('myApp', ['ui.router','ionic' ,'ngMessages', 'ngSanitize', 'afkl.lazyImage', 'satellizer', 'ngFileUpload', 'ngMap', 'btford.socket-io', '720kb.socialshare',
 		'authModApp',
-		'app.common', 'app.home', 'app.store', 'app.chat', 'app.admin', 'ngMaterial', 'app.review', 'app.product', 'app.user', 'app.offer', 'app.event'
+		'app.common', 'ngCordova','app.home', 'app.store', 'app.chat', 'app.admin', 'ngMaterial', 'app.review', 'app.product', 'app.user', 'app.offer', 'app.event'
 	]);
 	app.config(['$urlRouterProvider','$stateProvider', '$ionicConfigProvider',
 		function($urlRouterProvider,$stateProvider, $ionicConfigProvider) {

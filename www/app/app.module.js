@@ -3,7 +3,7 @@
 	'use strict';
 
 	var app = angular.module('myApp', ['ui.router','ionic' ,'ngMessages', 'ngSanitize', 'afkl.lazyImage', 'satellizer', 'ngFileUpload', 'ngMap', 'btford.socket-io', '720kb.socialshare',
-		'authModApp',
+		'authModApp','google.places',
 		'app.common', 'app.home', 'app.store', 'app.chat', 'app.admin', 'ngMaterial', 'app.review', 'app.product', 'app.user', 'app.offer', 'app.event'
 	]);
 	app.config(['$urlRouterProvider','$stateProvider', '$ionicConfigProvider',

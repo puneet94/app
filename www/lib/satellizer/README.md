@@ -1,13 +1,16 @@
-![Project Logo](https://lh6.googleusercontent.com/-YmfKZZLZKL0/U-KVPFSbiOI/AAAAAAAAEZA/maoYT8iJCnA/w1089-h513-no/sshot-1.png)
+![Project Logo](http://i.imgur.com/yutNy7x.jpg)
 
 # [Satellizer](https://github.com/sahat/satellizer/)
 
-[![Donate](https://img.shields.io/badge/paypal-donate-blue.svg)](https://paypal.me/sahat) [![Join the chat at https://gitter.im/sahat/satellizer](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sahat/satellizer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Donate](https://img.shields.io/badge/paypal-donate-blue.svg)](https://paypal.me/sahat)
+[![Join the chat at https://gitter.im/sahat/satellizer](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sahat/satellizer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](http://img.shields.io/travis/sahat/satellizer.svg?style=flat)](https://travis-ci.org/sahat/satellizer)
-[![Test Coverage](http://img.shields.io/codeclimate/coverage/github/sahat/satellizer.svg?style=flat)](https://codeclimate.com/github/sahat/satellizer)
-[![Version](https://img.shields.io/badge/version-0.14.1-brightgreen.svg)](https://www.npmjs.org/package/satellizer)
+[![npm version](https://badge.fury.io/js/satellizer.svg)](https://badge.fury.io/js/satellizer)
+[![Book session on Codementor](https://cdn.codementor.io/badges/book_session_github.svg)](https://www.codementor.io/sahatyalkabov?utm_source=github&utm_medium=button&utm_term=sahatyalkabov&utm_campaign=github)
+[![OpenCollective](https://opencollective.com/satellizer/backers/badge.svg)](#backers)
+[![OpenCollective](https://opencollective.com/satellizer/sponsors/badge.svg)](#sponsors)
 
-**Live Demo:** [https://satellizer.herokuapp.com](https://satellizer.herokuapp.com)
+[**Live Demo**](https://satellizer-sahat.rhcloud.com)
 
 ---
 
@@ -19,6 +22,74 @@ you can add any *OAuth 1.0* or *OAuth 2.0* provider by passing provider-specific
 in the app *config* block.
 
 ![Screenshot](https://lh4.googleusercontent.com/-0UUIecT-3N4/U-LQJkd75iI/AAAAAAAAEZY/YN3Oe-eUPGc/w1676-h1158-no/satellizer.png)
+
+## Backers
+Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/satellizer#backer)]
+
+<a href="https://opencollective.com/satellizer/backer/0/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/0/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/1/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/1/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/2/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/2/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/3/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/3/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/4/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/4/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/5/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/5/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/6/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/6/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/7/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/7/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/8/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/8/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/9/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/9/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/10/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/10/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/11/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/11/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/12/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/12/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/13/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/13/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/14/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/14/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/15/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/15/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/16/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/16/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/17/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/17/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/18/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/18/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/19/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/19/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/20/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/20/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/21/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/21/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/22/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/22/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/23/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/23/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/24/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/24/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/25/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/25/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/26/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/26/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/27/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/27/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/28/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/28/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/backer/29/website" target="_blank"><img src="https://opencollective.com/satellizer/backer/29/avatar.svg"></a>
+
+## Sponsors
+Become a sponsor and get your logo on our README on Github with a link to your site. [[Become a sponsor](https://opencollective.com/satellizer#sponsor)]
+
+<a href="https://opencollective.com/satellizer/sponsor/0/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/1/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/2/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/3/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/4/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/5/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/6/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/7/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/8/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/9/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/9/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/10/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/10/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/11/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/11/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/12/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/12/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/13/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/13/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/14/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/14/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/15/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/15/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/16/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/16/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/17/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/17/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/18/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/18/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/19/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/19/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/20/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/20/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/21/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/21/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/22/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/22/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/23/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/23/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/24/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/24/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/25/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/25/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/26/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/26/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/27/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/27/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/28/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/28/avatar.svg"></a>
+<a href="https://opencollective.com/satellizer/sponsor/29/website" target="_blank"><img src="https://opencollective.com/satellizer/sponsor/29/avatar.svg"></a>
 
 ## Table of Contents
 
@@ -35,44 +106,36 @@ in the app *config* block.
 - [Obtaining OAuth Keys](#obtaining-oauth-keys)
 - [API Reference](#api-reference)
 - [FAQ](#faq)
- - [Can I change `redirectUri` to something other than base URL?](#question-can-i-change-redirecturi-to-something-other-than-base-url)
- - [How can I send a token in a format other than `Authorization: Bearer <token>?`](#question-how-can-i-send-a-token-in-a-format-other-than-authorization-bearer-token)
- - [How can I avoid sending Authorization header on all HTTP requests?](#question-how-can-i-avoid-sending-authorization-header-on-all-http-requests)
- - [Is there a way to dynamically change `localStorage` to `sessionStorage`?](#question-is-there-a-way-to-dynamically-change-localstorage-to-sessionstorage)
- - [I am having a problem with Ionic authentication on iOS 9.](#question-i-am-having-a-problem-with-ionic-authentication-on-ios-9)
+- [Community Resources](#community-resources)
+- [Backers](#backers)
+- [Sponsors](#sponsors)
 - [Credits](#credits)
 - [License](#license)
 
 ## Installation
 
-The easiest way to get **Satellizer** is by running one of the following commands:
-
-```bash
-# Bower
-bower install satellizer
-
-# NPM
-npm install satellizer
-```
-
-Alternatively, you may [**download**](https://github.com/sahat/satellizer/releases) the latest release or use the CDN:
+#### <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Google_Chrome_icon_%282011%29.svg" height="22" align="top"> Browser
 
 ```html
-<!--[if lte IE 9]>
-<script src="//cdnjs.cloudflare.com/ajax/libs/Base64/0.3.0/base64.min.js"></script>
-<![endif]-->
-<script src="//cdn.jsdelivr.net/satellizer/0.14.1/satellizer.min.js"></script>
+<script src="angular.js"></script>
+<script src="satellizer.js"></script>
 ```
-
-If installed via [Bower](http://bower.io/), include one of the following script tags:
 ```html
-<script src="bower_components/satellizer/satellizer.js"></script>
-<!-- or -->
-<script src="bower_components/satellizer/satellizer.min.js"></script>
+<!-- Satellizer CDN -->
+<script src="https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.min.js"></script>
 ```
 
-**Note:** Sattelizer depends on [`window.atob()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/atob) for decoding JSON Web Tokens. If you need to support *IE9* then use Base64 polyfill above.
+#### <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg" height="22" align="top"> NPM
 
+```
+$ npm install satellizer
+```
+
+#### <img src="https://bower.io/img/bower-logo.svg" height="22" align="top"> Bower
+
+```
+$ bower install satellizer
+```
 
 ### Requirements for Mobile Apps
 
@@ -106,7 +169,7 @@ angular.module('MyApp', ['satellizer'])
       clientId: 'Facebook App ID'
     });
 
-    // Optional: For client-side use (Implicit Grant), set responseType to 'token'
+    // Optional: For client-side use (Implicit Grant), set responseType to 'token' (default: 'code')
     $authProvider.facebook({
       clientId: 'Facebook App ID',
       responseType: 'token'
@@ -142,6 +205,10 @@ angular.module('MyApp', ['satellizer'])
 
     $authProvider.bitbucket({
       clientId: 'Bitbucket Client ID'
+    });
+
+    $authProvider.spotify({
+      clientId: 'Spotify Client ID'
     });
 
     // No additional setup required for Twitter
@@ -182,6 +249,7 @@ angular.module('MyApp')
 <button ng-click="authenticate('live')">Sign in with Windows Live</button>
 <button ng-click="authenticate('twitch')">Sign in with Twitch</button>
 <button ng-click="authenticate('bitbucket')">Sign in with Bitbucket</button>
+<button ng-click="authenticate('spotify')">Sign in with Spotify</button>
 ```
 
 **Note:** For server-side usage please refer to the [**examples**](https://github.com/sahat/satellizer/tree/master/examples/server)
@@ -193,7 +261,7 @@ Below is a complete listing of all default configuration options.
 
 ```js
 $authProvider.httpInterceptor = function() { return true; },
-$authProvider.withCredentials = true;
+$authProvider.withCredentials = false;
 $authProvider.tokenRoot = null;
 $authProvider.baseUrl = '/';
 $authProvider.loginUrl = '/auth/login';
@@ -201,8 +269,8 @@ $authProvider.signupUrl = '/auth/signup';
 $authProvider.unlinkUrl = '/auth/unlink/';
 $authProvider.tokenName = 'token';
 $authProvider.tokenPrefix = 'satellizer';
-$authProvider.authHeader = 'Authorization';
-$authProvider.authToken = 'Bearer';
+$authProvider.tokenHeader = 'Authorization';
+$authProvider.tokenType = 'Bearer';
 $authProvider.storageType = 'localStorage';
 
 // Facebook
@@ -215,7 +283,7 @@ $authProvider.facebook({
   scope: ['email'],
   scopeDelimiter: ',',
   display: 'popup',
-  type: '2.0',
+  oauthType: '2.0',
   popupOptions: { width: 580, height: 400 }
 });
 
@@ -230,7 +298,7 @@ $authProvider.google({
   scopePrefix: 'openid',
   scopeDelimiter: ' ',
   display: 'popup',
-  type: '2.0',
+  oauthType: '2.0',
   popupOptions: { width: 452, height: 633 }
 });
 
@@ -242,7 +310,7 @@ $authProvider.github({
   optionalUrlParams: ['scope'],
   scope: ['user:email'],
   scopeDelimiter: ' ',
-  type: '2.0',
+  oauthType: '2.0',
   popupOptions: { width: 1020, height: 618 }
 });
 
@@ -255,7 +323,7 @@ $authProvider.instagram({
   requiredUrlParams: ['scope'],
   scope: ['basic'],
   scopeDelimiter: '+',
-  type: '2.0'
+  oauthType: '2.0'
 });
 
 // LinkedIn
@@ -267,7 +335,7 @@ $authProvider.linkedin({
   scope: ['r_emailaddress'],
   scopeDelimiter: ' ',
   state: 'STATE',
-  type: '2.0',
+  oauthType: '2.0',
   popupOptions: { width: 527, height: 582 }
 });
 
@@ -276,7 +344,7 @@ $authProvider.twitter({
   url: '/auth/twitter',
   authorizationEndpoint: 'https://api.twitter.com/oauth/authenticate',
   redirectUri: window.location.origin,
-  type: '1.0',
+  oauthType: '1.0',
   popupOptions: { width: 495, height: 645 }
 });
 
@@ -289,7 +357,7 @@ $authProvider.twitch({
   scope: ['user_read'],
   scopeDelimiter: ' ',
   display: 'popup',
-  type: '2.0',
+  oauthType: '2.0',
   popupOptions: { width: 500, height: 560 }
 });
 
@@ -302,7 +370,7 @@ $authProvider.live({
   scope: ['wl.emails'],
   scopeDelimiter: ' ',
   display: 'popup',
-  type: '2.0',
+  oauthType: '2.0',
   popupOptions: { width: 500, height: 560 }
 });
 
@@ -313,7 +381,7 @@ $authProvider.yahoo({
   redirectUri: window.location.origin,
   scope: [],
   scopeDelimiter: ',',
-  type: '2.0',
+  oauthType: '2.0',
   popupOptions: { width: 559, height: 519 }
 });
 
@@ -325,8 +393,22 @@ $authProvider.bitbucket({
   optionalUrlParams: ['scope'],
   scope: ['email'],
   scopeDelimiter: ' ',
-  type: '2.0',
+  oauthType: '2.0',
   popupOptions: { width: 1020, height: 618 }
+});
+
+// Spotify
+$authProvider.spotify({
+  url: '/auth/spotify',
+  authorizationEndpoint: 'https://accounts.spotify.com/authorize',
+  redirectUri: window.location.origin,
+  optionalUrlParams: ['state'],
+  requiredUrlParams: ['scope'],
+  scope: ['user-read-email'],
+  scopePrefix: '',
+  scopeDelimiter: ',',
+  oauthType: '2.0',
+  popupOptions: { width: 500, height: 530 }
 });
 
 // Generic OAuth 2.0
@@ -343,7 +425,7 @@ $authProvider.oauth2({
   scopePrefix: null,
   scopeDelimiter: null,
   state: null,
-  type: null,
+  oauthType: null,
   popupOptions: null,
   responseType: 'code',
   responseParams: {
@@ -359,7 +441,7 @@ $authProvider.oauth1({
   url: null,
   authorizationEndpoint: null,
   redirectUri: null,
-  type: null,
+  oauthType: null,
   popupOptions: null
 });
 ```
@@ -377,7 +459,7 @@ $authProvider.oauth1({
       <td><img src="http://upload.wikimedia.org/wikipedia/commons/d/d4/Opera_browser_logo_2013.png" height="35"></td>
     </tr>
     <tr>
-      <td align="center">9*</td>
+      <td align="center">9+</td>
       <td align="center">✓</td>
       <td align="center">✓</td>
       <td align="center">✓</td>
@@ -386,8 +468,6 @@ $authProvider.oauth1({
     </tr>
   </tbody>
 </table>
-
-__*__ Requires [Base64](https://github.com/davidchambers/Base64.js/) polyfill.
 
 ## Authentication Flow
 
@@ -456,7 +536,7 @@ use after page reload.
 ## Obtaining OAuth Keys
 
 <img src="https://camo.githubusercontent.com/204e6b07369021b5b9eb7d228d051aca72a457ef/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f322f32662f476f6f676c655f323031355f6c6f676f2e7376672f3130303070782d476f6f676c655f323031355f6c6f676f2e7376672e706e67" width="150">
-- Visit [Google Cloud Console](https://cloud.google.com/console/project)
+- Visit [Google Developer Console](https://console.developers.google.com/iam-admin/projects)
 - Click **CREATE PROJECT** button
 - Enter *Project Name*, then click **CREATE**
 - Then select *APIs & auth* from the sidebar and click on *Credentials* tab
@@ -512,6 +592,20 @@ and specify `mylocalwebsite.net` as your *Redirect URL* in the **API Settings** 
  - **Homepage URL**: *http://localhost:3000*
  - **Authorization callback URL**: *http://localhost:3000*
 - Click on the **Register application** button
+
+<img
+src="http://i.imgur.com/qCkAeZl.png"
+width="150" />
+- Visit
+[https://developer.spotify.com](https://developer.spotify.com)
+- Select **My Apps** on the top menu
+- Select **Create an App** on the right side
+ - **Application Name**: Your app name
+ - **Application Description**: Your app Description
+- Click **Create**
+- Fill out the following:
+ - **Redirect URIs**: *http://localhost:3000*
+- Click **Save**
 
 <hr>
 
@@ -605,7 +699,7 @@ $auth.signup(user)
 
 #### `$auth.authenticate(name, [userData])`
 
-Starts the OAuth 1.0 or the OAuth 2.0 authorization flow by opening a popup window. If used client side, [`responseType: "token"`](#authentication-flow) is required in the provider setup to get the actual access token. 
+Starts the OAuth 1.0 or the OAuth 2.0 authorization flow by opening a popup window. If used client side, [`responseType: "token"`](#authentication-flow) is required in the provider setup to get the actual access token.
 
 ##### Parameters
 
@@ -805,6 +899,15 @@ $auth.setStorageType('sessionStorage');
 
 ## FAQ
 
+#### :question: How do I set `offline_access`?
+
+```js
+$authProvider.google({
+  optionalUrlParams: ['access_type'],
+  accessType: 'offline'
+});
+```
+
 #### :question: Can I change `redirectUri` to something other than base URL?
 
 By default, `redirectUri` is set to `window.location.origin` (protocol, hostname, port number of a URL) for all OAuth providers. This `redirectUri` must match *exactly* the URL¹ specified in your OAuth app settings.
@@ -829,7 +932,7 @@ As far as Satellizer is concerned, it does not matter what is the value of `redi
 
 #### :question: How can I send a token in a format other than `Authorization: Bearer <token>`?
 If you are unable to send a token to your server in the following format - `Authorization: Bearer <token>`, then use
-**`$authProvider.authHeader`** and **`$authProvider.authToken`** config options to change the header format. The default values are `Authorization` and `Bearer`, respectively.
+**`$authProvider.tokenHeader`** and **`$authProvider.tokenType`** config options to change the header format. The default values are `Authorization` and `Bearer`, respectively.
 
 For example, if you need to use `Authorization: Basic` header, this is where you change it.
 
@@ -856,6 +959,13 @@ If you have configured everything correctly, chances are you running into the fo
 > Failed to load resource: The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.
 
 Follow instructions on this [StackOverflow post](http://stackoverflow.com/questions/32631184/the-resource-could-not-be-loaded-because-the-app-transport-security-policy-requi) by adding `NSAppTransportSecurity` to *info.plist*. That should fix the problem.
+
+## Community Resources
+
+### Tutorials
+- Ionic JWT auth with Facebook using Node.js ([Part 1](http://blog.grossman.io/ionic-jwt-auth-with-facebook-using-nodejs-part-1/) and [Part 2](http://blog.grossman.io/ionic-jwt-auth-with-facebook-using-nodejs-part-2-2/))
+- [Build an Instagram clone with AngularJS, Satellizer, Node.js and MongoDB](https://hackhands.com/building-instagram-clone-angularjs-satellizer-nodejs-mongodb/)
+
 
 ## Credits
 

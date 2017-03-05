@@ -2,9 +2,9 @@
 	'use strict';
 	angular.module('app.admin')
 
-	.controller('CreateProductController', ['$stateParams', '$timeout', '$state', 'adminProductService', 'Upload', 'baseUrlService', '$mdDialog', CreateProductController]);
+	.controller('CreateProductController', ['$scope','$stateParams', '$timeout', '$state', 'adminProductService', 'Upload', 'baseUrlService', '$mdDialog', '$cordovaGeolocation',CreateProductController]);
 
-	function CreateProductController($stateParams, $timeout, $state, adminProductService, Upload, baseUrlService, $mdDialog) {
+	function CreateProductController($scope,$stateParams, $timeout, $state, adminProductService, Upload, baseUrlService, $mdDialog,$cordovaGeolocation) {
 
 		var csc = this;
 		csc.productForm = {};
@@ -85,7 +85,84 @@
 
 
 		function activate() {
+			loadGoogleMaps();
+		}
 
+
+		function loadGoogleMaps() {
+			alert("load started from product");
+			window.mapInit = function(){
+      				googleMap();
+    			};
+			var script = document.createElement("script");
+			script.type = "text/javascript";
+			script.id = "googleMaps";
+
+			var mapsTag =  document.getElementById('googleMaps');
+			if(mapsTag){
+				alert("hit tag in product");
+				mapsTag.parentElement.removeChild(mapsTag);	
+			}
+			
+			var apiKey = 'AIzaSyDGTEBHgF0pPjYvmmrlHYLUyksDW70lNWU';
+			if(typeof google == "undefined" || typeof google.maps == "undefined"){
+				alert("script added from product");
+				script.src = 'https://maps.google.com/maps/api/js?key=' + apiKey + '&callback=mapInit';	
+				document.body.appendChild(script);
+			}
+			
+			
+			
+
+			
+		}
+
+		function googleMap() {
+			var options = { timeout: 10000, enableHighAccuracy: false };
+			var marker;
+			$cordovaGeolocation.getCurrentPosition(options).then(function(position) {
+				var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+				var mapOptions = {
+					center: latLng,
+					zoom: 15,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+
+				$scope.map = new google.maps.Map(document.getElementById("productGoogleMap"), mapOptions);
+				google.maps.event.addListenerOnce($scope.map, 'idle', function() {
+
+					marker = new google.maps.Marker({
+						map: $scope.map,
+						animation: google.maps.Animation.DROP,
+						position: latLng
+					});
+
+					
+
+				});
+
+				google.maps.event.addListener($scope.map, 'click', function(event) {
+					alert("from product page");
+					alert(event.latLng);
+
+					//console.log(marker);
+					if (marker) {
+						marker.setPosition(event.latLng);
+						marker.setMap($scope.map);
+					} else {
+
+						marker = new google.maps.Marker({
+							position: event.latLng,
+							map: $scope.map
+						});
+					}
+				});
+
+			}, function(error) {
+				alert("error");
+				console.log("error is here");
+				console.log(error);
+			});
 		}
 	}
 })(window.angular);

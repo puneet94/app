@@ -1,4 +1,4 @@
-<div ng-controller="StoreStatisticsController as sstc" layout="column" ng-cloak="">
+<div ng-controller="StoreStatisticsController as sstc" >
 
       <div class="customTabsContainer">
                 <ul class="tabsList">
@@ -8,13 +8,13 @@
                     <li ng-click="sstc.setTab(4)" ng-class="{customTabActive:sstc.isSet(4)}">Offers</li>
                 </ul>
             </div>
-            <div ng-show="sstc.isSet(1)">
-                <div class="animated slideInLeft" ng-include="'app/admin/views/adminEditStore.html'" flex>
+            <div ng-if="sstc.isSet(1)">
+                <div class="animated slideInLeft" ng-include="'app/admin/views/adminEditStore.html'">
                   
                 </div>
             </div>
 
-            <div ng-show="sstc.isSet(2)">
+            <div ng-if="sstc.isSet(2)">
                 <div class="animated slideInLeft">
                     <div ng-include="'app/reviews/views/storeReviewList.html'"></div>
                 
@@ -22,7 +22,7 @@
                 
             </div>
 
-            <div ng-show="sstc.isSet(3)">
+            <div ng-if="sstc.isSet(3)">
                 <div  class="animated slideInLeft" >
                     <div ng-include="'app/product/views/productsStoreCollection.html'">
                         
@@ -33,12 +33,13 @@
                 </div>
             </div>
             
-            <div ng-show="sstc.isSet(4)">
+            <div ng-if="sstc.isSet(4)">
                 <div class="animated slideInLeft" >
                     <div ng-include="'app/admin/views/adminOffersCollection.html'">
                         
                     </div>
-                    <div ng-include="'app/admin/views/adminCreateOffer.html'">
+
+                    <div style="margin-top: 20px" ng-include="'app/admin/views/adminCreateOffer.html'">
                         
                     </div>
                 </div>
