@@ -99,48 +99,51 @@
 
 		function loadGoogleMaps() {
 
-			window.mapInit = function(){
-      				googleMap();
-    			};
+			window.mapInit = function() {
+				googleMap();
+			};
 			var script = document.createElement("script");
 			script.type = "text/javascript";
 			script.id = "googleMaps";
 
-			var mapsTag =  document.getElementById('googleMaps');
-			if(mapsTag){
-				
-				mapsTag.parentElement.removeChild(mapsTag);	
+			var mapsTag = document.getElementById('googleMaps');
+			if (mapsTag) {
+				alert("hihihihit");
+				mapsTag.parentElement.removeChild(mapsTag);
 			}
 			var apiKey = 'AIzaSyDGTEBHgF0pPjYvmmrlHYLUyksDW70lNWU';
-			
-			script.src = 'https://maps.google.com/maps/api/js?key=' + apiKey + '&ibraries=places&callback=mapInit';	
+
+			script.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&libraries=places&callback=mapInit';
 			document.body.appendChild(script);
-			
-			
-			
-			
 
-			
 		}
-		$scope.$on('gmPlacesAutocomplete::placeChanged', function(){
 
-			alert("hiyyingfd");
-     			 var location = coc.autocomplete.getPlace().geometry.location;
-      			$scope.lat = location.lat();
-      			$scope.lng = location.lng();
-      			$scope.$apply();
+		function autocompleteMaps(marker) {
+			var input = document.getElementById('offer-map-input');
+			var autocomplete = new google.maps.places.Autocomplete(input);
 
-      			if (marker) {
-						marker.setPosition([$scope.lat,$scope.lang]);
-						marker.setMap($scope.map);
-					} else {
+			autocomplete.addListener('place_changed', function() {
 
-						marker = new google.maps.Marker({
-							position: [$scope.lat,$scope.lang],
-							map: $scope.map
-						});
-					}
-  		});
+				var place = autocomplete.getPlace();
+
+				var latLng = new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng());
+				if (!place.geometry) {
+					// User entered the name of a Place that was not suggested and
+					// pressed the Enter key, or the Place Details request failed.
+					window.alert("No details available for input: '" + place.name + "'");
+					return;
+				}
+
+				// If the place has a geometry, then present it on a map.
+
+				marker.setPosition(latLng);
+				marker.setMap($scope.map);
+
+				$scope.map.setCenter(latLng);
+			});
+
+		}
+
 		function googleMap() {
 			var options = { timeout: 10000, enableHighAccuracy: false };
 			var marker;
@@ -161,14 +164,11 @@
 						position: latLng
 					});
 
-					
+					autocompleteMaps(marker);
 
 				});
 
 				google.maps.event.addListener($scope.map, 'click', function(event) {
-					
-					alert(event.latLng.lat());
-					
 
 					//console.log(marker);
 					if (marker) {
@@ -182,6 +182,7 @@
 						});
 					}
 				});
+
 
 			}, function(error) {
 				alert("error");

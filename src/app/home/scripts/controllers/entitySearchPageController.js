@@ -59,7 +59,7 @@
                 $state.go('tabs.productsCollectionLocation',{location:espc.city});
 
             } else if (changeEntity.trim().indexOf("offers")!=-1) {
-               $state.go('tabs.offersCollectionLocation',{location:espc.city});
+               $state.go('tabs.offers.offersCollectionLocation',{location:espc.city});
                 
 
             } else {

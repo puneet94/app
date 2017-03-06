@@ -1,0 +1,16 @@
+<ion-view>
+<ion-content>
+<h1>Offers Collection</h1>
+<div class="item range">
+  <i class="icon ion-volume-low"></i>
+  <input type="range"  name="range" ng-model="ocp.distance" ng-change="ocp.changeDistance()" ng-min="0" ng-max="100" />
+  <i class="icon ion-volume-high"></i>
+</div>
+
+{{ocp.distance}}
+
+<div ui-view="offer-tab">
+	
+</div>
+</ion-content>
+</ion-view>

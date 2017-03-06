@@ -1,21 +1,39 @@
-(function(angular){
-  'use strict';
-angular.module('app.offer',[]).config(['$stateProvider',
-  function($stateProvider) {
-    $stateProvider.
-      state('offersLocation', {
-        url: '/offers/:location/:slug?',
-        templateUrl: 'app/offer/views/offersPage.html',
-        controller: 'OffersPageController',
-        controllerAs: 'ospc'
-      }).
-      state('offerPage', {
-        url: '/offer/:offerId',
-        templateUrl: 'app/offer/views/offerPage.html',
-        controller: 'OfferPageController',
-        controllerAs: 'opc'
-      });
-  }]);
+(function(angular) {
+	'use strict';
+	angular.module('app.offer', []).config(['$stateProvider',
+		function($stateProvider) {
+			$stateProvider.
+			state('tabs.offers', {
+				url: '/offers',
+				abstract: true,
+				views: {
+					'offer-tab': {
+						templateUrl: 'app/offer/views/offersCollectionParent.html',
+						controller: 'OffersParentController',
+						controllerAs: 'ocp'
+					}
+				}
+				
+			}).
+			state('tabs.offers.offersCollectionLocation', {
+				views: {
+					'offer-tab': {
+						templateUrl: 'app/offer/views/offersCollection.html',
+				controller: 'OffersPageController',
+				controllerAs: 'ospc'
+			}},
+				url: '/offersCollection/:location',
+				
+					
+			}).
+			state('offerPage', {
+				url: '/offer/:offerId',
+				templateUrl: 'app/offer/views/offerPage.html',
+				controller: 'OfferPageController',
+				controllerAs: 'opc'
+			});
+		}
+	]);
 
 })(window.angular);
 //productsCollection/";
