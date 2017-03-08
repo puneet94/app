@@ -5,7 +5,6 @@
 
   function OffersCollectionController($scope, $auth, $stateParams) {
     var occ = this;
-    occ.pageNo = 0;
 
     occ.offersList = [];
     

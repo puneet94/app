@@ -5,7 +5,11 @@
 	             <div class="storeRating">
 	             	{{store.rating}}
 	             </div>
-	             <h2 class="storeHeading"> {{store.name}}</h2>
+	             <h2 class="storeHeading"> 
+	             	<a ui-sref="tabs.singleStorePage({'storeId':store._id})">
+	             		{{store.name}}		
+	             	</a>
+	             </h2>
 	             
 	             <div class="storeAddress">
 	                        <span>{{::store.address.locality+", "}}</span>

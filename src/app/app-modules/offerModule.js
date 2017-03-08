@@ -12,6 +12,11 @@
 						controller: 'OffersParentController',
 						controllerAs: 'ocp'
 					}
+				},
+				resolve:{
+					positions: ['userLocationService',function(userLocationService){
+						return userLocationService.getUserLocation();
+					}]
 				}
 				
 			}).

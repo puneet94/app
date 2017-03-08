@@ -66,8 +66,14 @@ function UserService($http,baseUrlService,userData){
     return $http.get(baseUrlService.baseUrl+"user/singleUser/"+userId,{params: { 'select': 'name address.area address.locality' }});
   }
   function updateUser(user){
-    console.log("the id"+userData.getUser()._id);
-    return $http.post(baseUrlService.baseUrl+'user/updateUser/'+userData.getUser()._id,user);
+    
+    if(userData.getUser()){
+      
+      return $http.post(baseUrlService.baseUrl+'user/updateUser/'+userData.getUser()._id,user);  
+    }
+    
+    
+    
   }
   function checkUserPassword(password){
    return $http.post(baseUrlService.baseUrl+'user/checkPassword/'+userData.getUser()._id,password); 
