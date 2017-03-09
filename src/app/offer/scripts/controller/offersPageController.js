@@ -17,7 +17,7 @@
 			limit: 10,
 			longitude: positions.longitude,
 			latitude: positions.latitude,
-			distance: 60000
+			distance: 6000
 		};
 
 		$scope.$on('distanceChanged',function(distance){
