@@ -116,7 +116,7 @@ angular.module('app.common')
 			this.baseUrl = this.baseUrl = $location.protocol() + "://" + $location.host()+'/';	
 		}*/
 		//this.baseUrl =  'http://shoppins-imanjithreddy.c9users.io/';
-		this.baseUrl = "http://www.ofline.in/";
+		this.baseUrl = "http://localhost:3000/";//http://www.ofline.in/";
 		this.currentUrl = $location.absUrl().split('?')[0];
 		this.currentUrlWQ = $location.absUrl();
 		console.log("base");

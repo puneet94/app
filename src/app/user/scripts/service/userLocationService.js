@@ -14,8 +14,8 @@ function UserLocationService($cordovaGeolocation,userService){
   function getUserLocation(){
     var options = { timeout: 10000, enableHighAccuracy: false };
     return $cordovaGeolocation.getCurrentPosition(options).then(function(position) {
-      var positions = {latitude:position.coords.latitude, longitide:position.coords.longitude};
-      userService.updateUser({latitude:position.coords.latitude,longitude:position.coords.longitude});    
+      var positions = {latitude:position.coords.latitude, longitude:position.coords.longitude};
+      userService.updateUser(positions);    
       return positions;
       });    
   }

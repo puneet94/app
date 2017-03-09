@@ -64,11 +64,13 @@
 		};
 
 		function createOffer() {
+			console.log("the form");
+			console.log(coc.offerForm);
 			coc.offerForm.bannerImage = coc.offerForm.bannerImage || coc.offerForm.offerImages[0];
 			adminOfferService.createOffer($stateParams.storeId, coc.offerForm)
 				.then(function(response) {
 					console.log(response.data._id);
-					userData.setUser();
+					
 					$mdDialog.show(
 						$mdDialog.alert()
 						.clickOutsideToClose(true)
@@ -148,6 +150,9 @@
 			var options = { timeout: 10000, enableHighAccuracy: false };
 			var marker;
 			$cordovaGeolocation.getCurrentPosition(options).then(function(position) {
+				coc.offerForm.latitude = position.coords.latitude;
+				coc.offerForm.longitude = position.coords.longitude;
+				
 				var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 				var mapOptions = {
 					center: latLng,
@@ -169,8 +174,10 @@
 				});
 
 				google.maps.event.addListener($scope.map, 'click', function(event) {
-
-					//console.log(marker);
+					coc.offerForm.latitude = event.latLng.lat();
+					coc.offerForm.longitude = event.latLng.lng();
+					
+					
 					if (marker) {
 						marker.setPosition(event.latLng);
 						marker.setMap($scope.map);

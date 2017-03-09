@@ -13,23 +13,24 @@
 						controllerAs: 'ocp'
 					}
 				},
-				resolve:{
-					positions: ['userLocationService',function(userLocationService){
+				resolve: {
+					positions: ['userLocationService', function(userLocationService) {
 						return userLocationService.getUserLocation();
 					}]
 				}
-				
+
 			}).
 			state('tabs.offers.offersCollectionLocation', {
 				views: {
 					'offer-tab': {
 						templateUrl: 'app/offer/views/offersCollection.html',
-				controller: 'OffersPageController',
-				controllerAs: 'ospc'
-			}},
+						controller: 'OffersPageController',
+						controllerAs: 'ospc'
+					}
+				},
 				url: '/offersCollection/:location',
-				
-					
+
+
 			}).
 			state('offerPage', {
 				url: '/offer/:offerId',

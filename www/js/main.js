@@ -442,23 +442,24 @@ angular.module('app.event',[]).config(['$stateProvider',
 						controllerAs: 'ocp'
 					}
 				},
-				resolve:{
-					positions: ['userLocationService',function(userLocationService){
+				resolve: {
+					positions: ['userLocationService', function(userLocationService) {
 						return userLocationService.getUserLocation();
 					}]
 				}
-				
+
 			}).
 			state('tabs.offers.offersCollectionLocation', {
 				views: {
 					'offer-tab': {
 						templateUrl: 'app/offer/views/offersCollection.html',
-				controller: 'OffersPageController',
-				controllerAs: 'ospc'
-			}},
+						controller: 'OffersPageController',
+						controllerAs: 'ospc'
+					}
+				},
 				url: '/offersCollection/:location',
-				
-					
+
+
 			}).
 			state('offerPage', {
 				url: '/offer/:offerId',
@@ -823,7 +824,7 @@ angular.module('app.common')
 			this.baseUrl = this.baseUrl = $location.protocol() + "://" + $location.host()+'/';	
 		}*/
 		//this.baseUrl =  'http://shoppins-imanjithreddy.c9users.io/';
-		this.baseUrl = "http://www.ofline.in/";
+		this.baseUrl = "http://localhost:3000/";//http://www.ofline.in/";
 		this.currentUrl = $location.absUrl().split('?')[0];
 		this.currentUrlWQ = $location.absUrl();
 		console.log("base");
@@ -1463,11 +1464,13 @@ function imageReplacementDirective(){
 		};
 
 		function createOffer() {
+			console.log("the form");
+			console.log(coc.offerForm);
 			coc.offerForm.bannerImage = coc.offerForm.bannerImage || coc.offerForm.offerImages[0];
 			adminOfferService.createOffer($stateParams.storeId, coc.offerForm)
 				.then(function(response) {
 					console.log(response.data._id);
-					userData.setUser();
+					
 					$mdDialog.show(
 						$mdDialog.alert()
 						.clickOutsideToClose(true)
@@ -1547,6 +1550,9 @@ function imageReplacementDirective(){
 			var options = { timeout: 10000, enableHighAccuracy: false };
 			var marker;
 			$cordovaGeolocation.getCurrentPosition(options).then(function(position) {
+				coc.offerForm.latitude = position.coords.latitude;
+				coc.offerForm.longitude = position.coords.longitude;
+				
 				var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 				var mapOptions = {
 					center: latLng,
@@ -1568,8 +1574,10 @@ function imageReplacementDirective(){
 				});
 
 				google.maps.event.addListener($scope.map, 'click', function(event) {
-
-					//console.log(marker);
+					coc.offerForm.latitude = event.latLng.lat();
+					coc.offerForm.longitude = event.latLng.lng();
+					
+					
 					if (marker) {
 						marker.setPosition(event.latLng);
 						marker.setMap($scope.map);
@@ -4070,17 +4078,34 @@ angular.module('app.user')
 	function OffersPageController($scope, $stateParams, offerService, positions) {
 		var opc = this;
 
-		activate();
-		opc.paramData = {
-			city: $stateParams.location,
-			page: 1,
-			limit: 10
-		};
-		function activate() {
-			offerService.getOfferCollection(opc.paramData).then(function(response) {
-				console.log(response);
-				opc.totalOffers = response.data.total;
+		
+		opc.offersList = [];
+		opc.loadOffers = loadOffers;
+		opc.loadMore = loadMore;
 
+		opc.paramData = {
+			nearby: true,
+			page: 1,
+			limit: 10,
+			longitude: positions.longitude,
+			latitude: positions.latitude,
+			distance: 60000
+		};
+
+		$scope.$on('distanceChanged',function(distance){
+			opc.paramData.distance = distance;
+			opc.loadOffers();
+		});
+		function loadMore(){
+			opc.paramData.page +=1;
+			opc.loadOffers();
+		}
+		function loadOffers(){
+			
+			offerService.getOfferCollection(opc.paramData).then(function(response) {
+				console.log("params");
+			console.log(response);
+				opc.totalOffers = response.data.total;
 				angular.forEach(response.data.docs, function(value) {
 					opc.offersList.push(value);
 				});
@@ -4089,9 +4114,10 @@ angular.module('app.user')
 				console.log(error);
 			});
 		}
-
-
-
+		function activate() {
+			loadOffers();
+		}
+		activate();
 	}
 
 
@@ -4108,6 +4134,7 @@ angular.module('app.user')
     var ocp = this;
     ocp.changeDistance = function(){
     	console.log(ocp.distance);
+      
     };
     activate();
     
@@ -4122,62 +4149,42 @@ angular.module('app.user')
 
 })(window.angular);
 
+(function(angular){
+  'use strict';
+
+angular.module('app.offer')
+  .service('offerService',["$http","baseUrlService",OfferService]);
+
+/*
+  * This servic has a function to get collection of offers`
+*/
+function OfferService($http,baseUrlService){
+  this.getOfferCollection = getOfferCollection;
+  this.getSingleOffer = getSingleOffer;
+  function getOfferCollection(params){
+  	console.log(params);
+    return $http.get(baseUrlService.baseUrl+'offer/collection',{params:params});
+
+  }
+  function getSingleOffer(id,params){
+	return $http.get(baseUrlService.baseUrl+'offer/offer/'+id,{params:params});  	
+  }
+}
+})(window.angular);
+
 (function(angular) {
 	'use strict';
 	angular.module('app.offer')
-		.directive('offersList', ['offerService', offersList]);
+		.directive('offersList', [ offersList]);
 
-	function offersList(offerService) {
+	function offersList() {
 		return {
 			restrict: 'E',
 			replace: true,
 			templateUrl: 'app/offer/views/offersListTemplate.html',
 			scope: {
-				paramData: '=paramData'
-			},
-			
-			controller: ['$scope',function($scope) {
-				$scope.offersList = [];
-				$scope.loadMoreOffers = loadMoreOffers;
-				$scope.getOffers = getOffers;
-				activate();
-				$scope.$on('filterClicked', function() {
-					$scope.offersList = [];
-					$scope.paramData.page = 1;
-					getOffers();
-				});
-
-				function loadMoreOffers() {
-					$scope.paramData.page = $scope.paramData.page + 1;
-					getOffers();
-				}
-
-				function getOffers() {
-					$scope.spinnerLoading = true;
-					console.log("paramdata");
-					console.log($scope.paramData);
-					offerService.getOfferCollection($scope.paramData).then(function(response) {
-						console.log(response);
-						$scope.totalOffers = response.data.total;
-						
-						angular.forEach(response.data.docs, function(value) {
-							$scope.offersList.push(value);
-						});
-						
-						$scope.spinnerLoading = false;
-
-					}).catch(function(error) {
-						console.log('error');
-						console.log(error);
-					});
-				}
-
-				function activate() {
-					getOffers();
-				}
-
-
-			}]
+				offersList: '=offersList'
+			}
 		};
 	}
 
@@ -4323,29 +4330,6 @@ function singleOfferVertDirective() {
   }
 
 
-})(window.angular);
-
-(function(angular){
-  'use strict';
-
-angular.module('app.offer')
-  .service('offerService',["$http","baseUrlService",OfferService]);
-
-/*
-  * This servic has a function to get collection of offers`
-*/
-function OfferService($http,baseUrlService){
-  this.getOfferCollection = getOfferCollection;
-  this.getSingleOffer = getSingleOffer;
-  function getOfferCollection(params){
-  	console.log(params);
-    return $http.get(baseUrlService.baseUrl+'offer/collection',{params:params});
-
-  }
-  function getSingleOffer(id,params){
-	return $http.get(baseUrlService.baseUrl+'offer/offer/'+id,{params:params});  	
-  }
-}
 })(window.angular);
 
 (function(angular){
@@ -7384,8 +7368,8 @@ function UserLocationService($cordovaGeolocation,userService){
   function getUserLocation(){
     var options = { timeout: 10000, enableHighAccuracy: false };
     return $cordovaGeolocation.getCurrentPosition(options).then(function(position) {
-      var positions = {latitude:position.coords.latitude, longitide:position.coords.longitude};
-      userService.updateUser({latitude:position.coords.latitude,longitude:position.coords.longitude});    
+      var positions = {latitude:position.coords.latitude, longitude:position.coords.longitude};
+      userService.updateUser(positions);    
       return positions;
       });    
   }

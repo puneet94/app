@@ -6,17 +6,34 @@
 	function OffersPageController($scope, $stateParams, offerService, positions) {
 		var opc = this;
 
-		activate();
-		opc.paramData = {
-			city: $stateParams.location,
-			page: 1,
-			limit: 10
-		};
-		function activate() {
-			offerService.getOfferCollection(opc.paramData).then(function(response) {
-				console.log(response);
-				opc.totalOffers = response.data.total;
+		
+		opc.offersList = [];
+		opc.loadOffers = loadOffers;
+		opc.loadMore = loadMore;
 
+		opc.paramData = {
+			nearby: true,
+			page: 1,
+			limit: 10,
+			longitude: positions.longitude,
+			latitude: positions.latitude,
+			distance: 60000
+		};
+
+		$scope.$on('distanceChanged',function(distance){
+			opc.paramData.distance = distance;
+			opc.loadOffers();
+		});
+		function loadMore(){
+			opc.paramData.page +=1;
+			opc.loadOffers();
+		}
+		function loadOffers(){
+			
+			offerService.getOfferCollection(opc.paramData).then(function(response) {
+				console.log("params");
+			console.log(response);
+				opc.totalOffers = response.data.total;
 				angular.forEach(response.data.docs, function(value) {
 					opc.offersList.push(value);
 				});
@@ -25,9 +42,10 @@
 				console.log(error);
 			});
 		}
-
-
-
+		function activate() {
+			loadOffers();
+		}
+		activate();
 	}
 
 

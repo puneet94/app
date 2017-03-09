@@ -7,6 +7,7 @@
     var ocp = this;
     ocp.changeDistance = function(){
     	console.log(ocp.distance);
+      
     };
     activate();
     
